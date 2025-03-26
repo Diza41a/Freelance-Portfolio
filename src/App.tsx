@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { Route, BrowserRouter as Router } from 'react-router';
+import { Route, BrowserRouter as Router, Routes } from 'react-router';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/all';
 import { GlobalContext } from './contexts';
 import { getCurrentTheme } from './assets/themes';
 import ScrollToTop from './components/ScrollToTop';
@@ -19,6 +22,9 @@ const queryClient = new QueryClient({
   },
 });
 
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+
 const App = () => {
   const currentTheme = getCurrentTheme();
   const [theme, setTheme] = useState(currentTheme);
@@ -31,16 +37,19 @@ const App = () => {
         }}
       >
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <ScrollToTop />
-
           <Router>
-            <Route element={<MainLayout />}>
-              {ROUTES.map((route, index) => (
-                <Route key={index} path={route.path} element={route.element} />
-              ))}
-            </Route>
+            <Routes>
+              <Route element={<MainLayout />}>
+                {ROUTES.map((route, index) => (
+                  <Route key={index} path={route.path} element={route.element} />
+                ))}
+              </Route>
+            </Routes>
+
+            <ScrollToTop />
           </Router>
+
+          <CssBaseline />
         </ThemeProvider>
       </GlobalContext>
 

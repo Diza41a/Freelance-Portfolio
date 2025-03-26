@@ -5,4 +5,9 @@ export type RouteFixture = {
   element: JSX.Element;
 };
 
-export const ROUTES: RouteFixture[] = [];
+export const ROUTES: RouteFixture[] = [
+  {
+    path: '/',
+    element: <></>,
+  },
+];
