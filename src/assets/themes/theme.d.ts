@@ -13,20 +13,35 @@ declare module '@mui/material/styles' {
   }
 }
 
+type ButtonStyles = {
+  colors: {
+    background: string;
+    text: string;
+  };
+};
 declare module '@mui/material/styles' {
   interface Theme {
-    // fonts: {
-    //   main: string;
-    //   secondary: string;
-    //   tertiary: string;
-    // };
+    fonts: {
+      main: string;
+      secondary: string;
+      // tertiary: string;
+    };
+    button: {
+      primary: ButtonStyles;
+      secondary: ButtonStyles;
+      link: ButtonStyles;
+    };
   }
   interface ThemeOptions {
-    // fonts: {
-    //   main: string;
-    //   secondary: string;
-    //   tertiary?: string;
-    // };
+    fonts: {
+      main: string;
+      secondary: string;
+    };
+    button: {
+      primary: ButtonStyles;
+      secondary: ButtonStyles;
+      link: ButtonStyles;
+    };
   }
 }
 

@@ -11,6 +11,7 @@ import { getCurrentTheme } from './assets/themes';
 import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './components/MainLayout';
 import { ROUTES } from './routes';
+import injectFont, { FONTS_DATA } from './utils/fontInjector';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,6 +25,9 @@ const queryClient = new QueryClient({
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
+
+injectFont(FONTS_DATA.SpaceGrotesk.key, FONTS_DATA.SpaceGrotesk.path);
+injectFont(FONTS_DATA.WorkSans.key, FONTS_DATA.WorkSans.path);
 
 const App = () => {
   const currentTheme = getCurrentTheme();

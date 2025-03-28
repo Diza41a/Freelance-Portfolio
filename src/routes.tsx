@@ -1,4 +1,5 @@
 import type { JSX } from 'react';
+import LandingPage from './pages/Landing';
 
 export type RouteFixture = {
   path: string;
@@ -8,6 +9,6 @@ export type RouteFixture = {
 export const ROUTES: RouteFixture[] = [
   {
     path: '/',
-    element: <></>,
+    element: <LandingPage />,
   },
 ];
