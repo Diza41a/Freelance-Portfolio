@@ -10,7 +10,15 @@ export const BREAKPOINTS = {
 
 export const COLORS = {
   lightGreen: '#93F203',
-  black: '#0D0D0D',
+  blacks: {
+    100: '#0d0d0d',
+    200: '#1d1d1d',
+    300: '#282828',
+    400: '#373636',
+  },
   purple: '#6805F1',
-  white: '#FFFFFF',
+  whites: {
+    100: '#FFFFFF',
+    200: '#F0EFEF',
+  },
 };

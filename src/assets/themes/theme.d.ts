@@ -19,28 +19,46 @@ type ButtonStyles = {
     text: string;
   };
 };
+type HeaderStyles = {
+  colors: {
+    background: string;
+    text: string;
+    navLinkBackground: string;
+    navLinkTextPrimary: string;
+    navLinkTextSecondary: string;
+  };
+};
 declare module '@mui/material/styles' {
   interface Theme {
     fonts: {
       main: string;
       secondary: string;
-      // tertiary: string;
+      headingAlternative: string;
     };
     button: {
       primary: ButtonStyles;
       secondary: ButtonStyles;
       link: ButtonStyles;
+    };
+    header: {
+      opaqueBackground: HeaderStyles;
+      primary: HeaderStyles;
     };
   }
   interface ThemeOptions {
     fonts: {
       main: string;
       secondary: string;
+      headingAlternative: string;
     };
     button: {
       primary: ButtonStyles;
       secondary: ButtonStyles;
       link: ButtonStyles;
+    };
+    header: {
+      opaqueBackground: HeaderStyles;
+      primary: HeaderStyles;
     };
   }
 }

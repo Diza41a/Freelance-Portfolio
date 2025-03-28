@@ -28,6 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 injectFont(FONTS_DATA.SpaceGrotesk.key, FONTS_DATA.SpaceGrotesk.path);
 injectFont(FONTS_DATA.WorkSans.key, FONTS_DATA.WorkSans.path);
+injectFont(FONTS_DATA.VT323.key, FONTS_DATA.VT323.path);
 
 const App = () => {
   const currentTheme = getCurrentTheme();

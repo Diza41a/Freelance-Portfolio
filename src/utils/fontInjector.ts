@@ -1,5 +1,6 @@
 import SpaceGroteskFont from '../assets/fonts/SpaceGrotesk.ttf';
 import WorkSansFont from '../assets/fonts/WorkSans.ttf';
+import VT323Font from '../assets/fonts/VT323.ttf';
 
 const injectFont = (key: string, path: string) => {
   if (typeof document === 'undefined') return;
@@ -22,6 +23,10 @@ export const FONTS_DATA = {
   WorkSans: {
     key: 'WorkSans',
     path: WorkSansFont,
+  },
+  VT323: {
+    key: 'VT323',
+    path: VT323Font,
   },
 };
 
