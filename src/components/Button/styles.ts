@@ -35,6 +35,11 @@ const Button = styled(MuiButton, {
     borderRadius,
     fontSize: scaleFontSize(fontSize, 'mobile'),
     padding: scalePadding(padding, 'mobile'),
+    transition: 'transform 0.3s ease-in-out',
+
+    '&:hover': {
+      transform: 'translateY(-2px)',
+    },
 
     [theme.breakpoints.up('tablet')]: {
       fontSize,
