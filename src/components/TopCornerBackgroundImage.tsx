@@ -1,5 +1,8 @@
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { styled } from '@mui/material';
 import PageTopRightCornerImage from '../assets/images/PageTopRightCorner.svg';
+import { useRef } from 'react';
 
 const TopCornerBackgroundImageWrapper = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -9,21 +12,30 @@ const TopCornerBackgroundImageWrapper = styled('div')(({ theme }) => ({
 
   img: {
     position: 'relative',
-    width: '50%',
-    right: '-50%',
+    width: '65%',
+    right: '-61%',
   },
 
   [theme.breakpoints.up('desktop')]: {
     img: {
-      width: '75%',
-      right: '-25%',
+      width: '70%',
+      right: '-60%',
     },
   },
 }));
 
 const TopCornerBackgroundImage = () => {
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const tl = gsap.timeline({
+    repeat: -1,
+    yoyo: true,
+  });
+  useGSAP(() => {
+    tl.fromTo(imageWrapperRef.current, { rotate: -14 }, { rotate: 4, duration: 15, ease: 'sine' });
+  }, []);
+
   return (
-    <TopCornerBackgroundImageWrapper>
+    <TopCornerBackgroundImageWrapper ref={imageWrapperRef}>
       <img src={PageTopRightCornerImage} alt="" />
     </TopCornerBackgroundImageWrapper>
   );
