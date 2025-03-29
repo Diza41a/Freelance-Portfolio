@@ -8,7 +8,13 @@ const Button = styled(MuiButton, {
     !['styleVariant', 'borderRadius', 'padding', 'fontSize'].includes(prop),
 })<ButtonProps>(({ theme, styleVariant, fontSize = 16, padding, borderRadius }) => {
   const buttonStyleProps: CSSProperties = (() => {
-    if (styleVariant === 'link') {
+    if (styleVariant === 'secondary') {
+      return {
+        backgroundColor: theme.button.secondary.colors.background,
+        color: theme.button.secondary.colors.text,
+        fontFamily: theme.fonts.main,
+      };
+    } else if (styleVariant === 'link') {
       return {
         backgroundColor: theme.button.link.colors.background,
         color: theme.button.link.colors.text,

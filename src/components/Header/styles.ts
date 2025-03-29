@@ -8,25 +8,26 @@ export const classNames = {
   hidden: 'Header--hidden',
 };
 
-const height = 64;
-const desktopHeight = 80;
+export const HEADER_HEIGHT = 64;
+export const HEADER_HEIGHT_DESKTOP = 80;
 const logoLinkFontSize = 35;
 const navLinkFontSize = 16;
 const Header = styled('header')(({ theme }) => ({
   width: '100%',
   position: 'fixed',
+  zIndex: theme.zIndexes.header,
   top: 0,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '0 5%',
   backgroundColor: theme.header.primary.colors.background,
-  height,
+  height: HEADER_HEIGHT,
   boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
   transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
-    fontFamily: theme.fonts.headingAlternative,
+    fontFamily: theme.fonts.tertiary,
     fontSize: scaleFontSize(logoLinkFontSize, 'mobile'),
     textDecoration: 'none',
     color: theme.header.primary.colors.text,
@@ -56,7 +57,7 @@ const Header = styled('header')(({ theme }) => ({
       padding: 0,
       listStyle: 'none',
       position: 'fixed',
-      top: height,
+      top: HEADER_HEIGHT,
       left: 0,
       overflow: 'hidden',
       backgroundColor: 'transparent',
@@ -137,11 +138,12 @@ const Header = styled('header')(({ theme }) => ({
   },
 
   [`&.${classNames.hidden}`]: {
-    top: `-${height}px`,
+    top: `-${HEADER_HEIGHT}px`,
+    boxShadow: 'none',
   },
 
   [theme.breakpoints.up('desktop')]: {
-    height: desktopHeight,
+    height: HEADER_HEIGHT_DESKTOP,
     padding: '0 10%',
 
     [`.${classNames.logoLink}`]: {
@@ -211,7 +213,7 @@ const Header = styled('header')(({ theme }) => ({
     },
 
     [`&.${classNames.hidden}`]: {
-      top: `-${desktopHeight}px`,
+      top: `-${HEADER_HEIGHT_DESKTOP}px`,
     },
   },
 

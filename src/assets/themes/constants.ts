@@ -22,3 +22,8 @@ export const COLORS = {
     200: '#F0EFEF',
   },
 };
+
+export const Z_INDEXES = {
+  header: 1000,
+  backgroundImages: -1,
+};
