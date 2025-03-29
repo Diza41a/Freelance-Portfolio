@@ -4,6 +4,8 @@ import { scaleFontSize } from '../../utils/styleUtils';
 export const classNames = {
   logoLink: 'LogoLink',
   navMenuExpanded: 'NavMenu--expanded',
+  opaqueBackground: 'Header--opaqueBackground',
+  hidden: 'Header--hidden',
 };
 
 const height = 64;
@@ -21,12 +23,14 @@ const Header = styled('header')(({ theme }) => ({
   backgroundColor: theme.header.primary.colors.background,
   height,
   boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
+  transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
     fontFamily: theme.fonts.headingAlternative,
     fontSize: scaleFontSize(logoLinkFontSize, 'mobile'),
     textDecoration: 'none',
     color: theme.header.primary.colors.text,
+    transition: 'color 0.2s ease-in-out',
   },
 
   nav: {
@@ -119,6 +123,23 @@ const Header = styled('header')(({ theme }) => ({
     },
   },
 
+  [`&.${classNames.opaqueBackground}`]: {
+    backgroundColor: theme.header.opaqueBackground.colors.background,
+    boxShadow: 'none',
+
+    [`.${classNames.logoLink}`]: {
+      color: theme.header.opaqueBackground.colors.text,
+    },
+
+    '.hamburger-react': {
+      color: theme.header.opaqueBackground.colors.text,
+    },
+  },
+
+  [`&.${classNames.hidden}`]: {
+    top: `-${height}px`,
+  },
+
   [theme.breakpoints.up('desktop')]: {
     height: desktopHeight,
     padding: '0 10%',
@@ -139,6 +160,7 @@ const Header = styled('header')(({ theme }) => ({
           fontSize: navLinkFontSize,
           backgroundColor: theme.header.primary.colors.navLinkBackground,
           borderRadius: 23,
+          transitionDelay: '0s !important',
 
           a: {
             padding: '12px 20px',
@@ -164,6 +186,32 @@ const Header = styled('header')(({ theme }) => ({
       '.hamburger-react': {
         display: 'none',
       },
+    },
+
+    [`&.${classNames.opaqueBackground}`]: {
+      nav: {
+        ul: {
+          li: {
+            backgroundColor: theme.header.opaqueBackground.colors.navLinkBackground,
+
+            a: {
+              color: theme.header.opaqueBackground.colors.navLinkTextPrimary,
+            },
+
+            '&:hover': {
+              outlineColor: theme.header.opaqueBackground.colors.navLinkTextSecondary,
+
+              a: {
+                color: theme.header.opaqueBackground.colors.navLinkTextSecondary,
+              },
+            },
+          },
+        },
+      },
+    },
+
+    [`&.${classNames.hidden}`]: {
+      top: `-${desktopHeight}px`,
     },
   },
 
