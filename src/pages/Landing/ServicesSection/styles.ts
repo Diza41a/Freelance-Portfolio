@@ -12,6 +12,7 @@ export const classNames = {
 
 const ServicesSection = styled('div')(({ theme }) => ({
   position: 'relative',
+  overflow: 'hidden',
   zIndex: 10,
   marginTop: 60,
   padding: '0 5%',
