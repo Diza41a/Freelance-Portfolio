@@ -1,16 +1,14 @@
 import S, { classNames } from './styles';
 import type { JSX } from 'react';
 import HeroSection from './HeroSection';
+import ServicesSection from './ServicesSection';
 import TopCornerBackgroundImage from '../../components/TopCornerBackgroundImage';
 
 const LandingPage = (): JSX.Element => {
   return (
     <S.LandingPage className={classNames.root}>
       <HeroSection />
-      <div
-        style={{ height: '100vh', position: 'relative', zIndex: 10, backgroundColor: 'black' }}
-      />
-
+      <ServicesSection />
       <TopCornerBackgroundImage />
     </S.LandingPage>
   );

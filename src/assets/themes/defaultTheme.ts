@@ -30,6 +30,12 @@ const defaultTheme = createTheme({
         text: COLORS.whites[100],
       },
     },
+    neutral: {
+      colors: {
+        background: COLORS.whites[200],
+        text: COLORS.blacks[400],
+      },
+    },
   },
   link: {
     primary: {
@@ -37,6 +43,12 @@ const defaultTheme = createTheme({
         text: COLORS.blacks[100],
         icon: COLORS.purple,
       },
+    },
+  },
+  runningLine: {
+    colors: {
+      background: COLORS.purple,
+      text: COLORS.whites[100],
     },
   },
   header: {

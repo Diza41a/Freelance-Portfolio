@@ -14,25 +14,33 @@ const generateProfilePhotoTween = () =>
   );
 
 const generateTitleTextTween = () =>
-  generateTitleTween(`.${classNames.titleContainer}>h1`, classNames.titleContainer, false);
+  generateTitleTween({
+    cssSelector: `.${classNames.titleContainer}>h1`,
+    scrollTriggerSelector: `.${classNames.titleContainer}`,
+    withScrollTrigger: false,
+  });
 
 const generateBodyContainerTextTween = () =>
-  generateSlideInTween(
-    'right',
-    `.${classNames.bodyContainerText}`,
-    classNames.bodyContainer,
-    false,
-  );
+  generateSlideInTween({
+    scrollDirection: 'right',
+    cssSelector: `.${classNames.bodyContainerText}`,
+    scrollTriggerSelector: `.${classNames.bodyContainer}`,
+    withScrollTrigger: false,
+  });
 
 const generateActionButtonsTween = () =>
-  generateDivFadeInTween(
-    `.${classNames.bodyContainerActionButtons}`,
-    classNames.bodyContainer,
-    false,
-  );
+  generateDivFadeInTween({
+    cssSelector: `.${classNames.bodyContainerActionButtons}`,
+    scrollTriggerSelector: `.${classNames.bodyContainer}`,
+    withScrollTrigger: false,
+  });
 
 const generateLinksTween = () =>
-  generateDivFadeInTween(`.${classNames.bodyContainerLinks}`, classNames.bodyContainer, false);
+  generateDivFadeInTween({
+    cssSelector: `.${classNames.bodyContainerLinks}`,
+    scrollTriggerSelector: `.${classNames.bodyContainer}`,
+    withScrollTrigger: false,
+  });
 
 export const createHeroSectionTimeline = () => {
   const timeline = gsap.timeline({

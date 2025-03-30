@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 import { useGSAP } from '@gsap/react';
 import Button from '../../../components/Button';
 import Link from '../../../components/Link';
@@ -7,6 +7,7 @@ import S, { classNames } from './styles';
 import RobotHandTabletOnImage from '../../../assets/images/RobotHandOnTablet.png';
 import ProfilePhoto from '../../../assets/images/ProfilePhoto.jpeg';
 import ResumePdf from '../../../assets/docs/Resume.pdf';
+import RunningLine from './RunningLine';
 
 const HeroSection = () => {
   useGSAP(() => {
@@ -24,7 +25,7 @@ const HeroSection = () => {
       </div>
       <div className={classNames.bodyContainer}>
         <div className={classNames.bodyContainerImageContainer}>
-          <img src={RobotHandTabletOnImage} alt="" />
+          <img src={RobotHandTabletOnImage} alt="" draggable={false} />
           <div>
             <img src={ProfilePhoto} alt="" />
           </div>
@@ -59,6 +60,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <Divider />
+      <RunningLine />
     </S.HeroSection>
   );
 };

@@ -27,6 +27,12 @@ type LinkStyles = {
     icon: string;
   };
 };
+type RunningLineStyles = {
+  colors: {
+    background: string;
+    text: string;
+  };
+};
 type HeaderStyles = {
   colors: {
     background: string;
@@ -55,10 +61,12 @@ declare module '@mui/material/styles' {
       primary: ButtonStyles;
       secondary: ButtonStyles;
       link: ButtonStyles;
+      neutral: ButtonStyles;
     };
     link: {
       primary: LinkStyles;
     };
+    runningLine: RunningLineStyles;
     header: {
       opaqueBackground: HeaderStyles;
       primary: HeaderStyles;
@@ -76,10 +84,12 @@ declare module '@mui/material/styles' {
       primary: ButtonStyles;
       secondary: ButtonStyles;
       link: ButtonStyles;
+      neutral: ButtonStyles;
     };
     link: {
       primary: LinkStyles;
     };
+    runningLine: RunningLineStyles;
     header: {
       opaqueBackground: HeaderStyles;
       primary: HeaderStyles;

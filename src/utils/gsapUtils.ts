@@ -1,10 +1,14 @@
 import gsap from 'gsap';
 
-export const generateTitleTween = (
-  cssSelector: string,
+export const generateTitleTween = ({
+  cssSelector,
   scrollTriggerSelector = '',
   withScrollTrigger = true,
-) => {
+}: {
+  cssSelector: string;
+  scrollTriggerSelector?: string;
+  withScrollTrigger?: boolean;
+}) => {
   const tweenConfig: gsap.TweenVars = {
     opacity: 1,
     scale: 1,
@@ -23,15 +27,22 @@ export const generateTitleTween = (
   return gsap.fromTo(cssSelector, { opacity: 0, scale: 0.5 }, tweenConfig);
 };
 
-export const generateDivFadeInTween = (
-  cssSelector: string,
+export const generateDivFadeInTween = ({
+  cssSelector,
   scrollTriggerSelector = '',
   withScrollTrigger = true,
-) => {
+  stagger = 0,
+}: {
+  cssSelector: string;
+  scrollTriggerSelector?: string;
+  withScrollTrigger?: boolean;
+  stagger?: number;
+}) => {
   const tweenConfig: gsap.TweenVars = {
     opacity: 1,
     duration: 0.75,
     ease: 'linear',
+    stagger,
   };
 
   if (withScrollTrigger && scrollTriggerSelector) {
@@ -45,18 +56,26 @@ export const generateDivFadeInTween = (
   return gsap.fromTo(cssSelector, { opacity: 0 }, tweenConfig);
 };
 
-export const generateSlideInTween = (
-  scrollDirection: 'top' | 'bottom' | 'left' | 'right',
-  cssSelector: string,
+export const generateSlideInTween = ({
+  scrollDirection,
+  cssSelector,
   scrollTriggerSelector = '',
   withScrollTrigger = true,
-) => {
+  stagger = 0,
+}: {
+  scrollDirection: 'top' | 'bottom' | 'left' | 'right';
+  cssSelector: string;
+  scrollTriggerSelector?: string;
+  withScrollTrigger?: boolean;
+  stagger?: number;
+}) => {
   const tweenConfig: gsap.TweenVars = {
     opacity: 1,
     duration: 0.75,
     x: 0,
     y: 0,
     ease: 'power2.out',
+    stagger,
   };
 
   if (withScrollTrigger && scrollTriggerSelector) {
