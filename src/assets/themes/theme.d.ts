@@ -27,6 +27,11 @@ type LinkStyles = {
     icon: string;
   };
 };
+type OutlinedImageStyles = {
+  colors: {
+    outline: string;
+  };
+};
 type RunningLineStyles = {
   colors: {
     background: string;
@@ -66,6 +71,7 @@ declare module '@mui/material/styles' {
     link: {
       primary: LinkStyles;
     };
+    outlinedImage: OutlinedImageStyles;
     runningLine: RunningLineStyles;
     header: {
       opaqueBackground: HeaderStyles;
@@ -89,6 +95,7 @@ declare module '@mui/material/styles' {
     link: {
       primary: LinkStyles;
     };
+    outlinedImage: OutlinedImageStyles;
     runningLine: RunningLineStyles;
     header: {
       opaqueBackground: HeaderStyles;

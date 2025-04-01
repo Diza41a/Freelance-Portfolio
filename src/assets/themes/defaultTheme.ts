@@ -45,6 +45,11 @@ const defaultTheme = createTheme({
       },
     },
   },
+  outlinedImage: {
+    colors: {
+      outline: COLORS.whites[100],
+    },
+  },
   runningLine: {
     colors: {
       background: COLORS.purple,

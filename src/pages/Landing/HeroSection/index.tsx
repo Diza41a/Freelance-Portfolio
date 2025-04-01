@@ -8,6 +8,7 @@ import RobotHandTabletOnImage from '../../../assets/images/RobotHandOnTablet.png
 import ProfilePhoto from '../../../assets/images/ProfilePhoto.jpeg';
 import ResumePdf from '../../../assets/docs/Resume.pdf';
 import RunningLine from './RunningLine';
+import { NavLink } from 'react-router';
 
 const HeroSection = () => {
   useGSAP(() => {
@@ -36,9 +37,11 @@ const HeroSection = () => {
             outstanding user experiences across all digital platforms.
           </Typography>
           <div className={classNames.bodyContainerActionButtons}>
-            <Button padding={'20px 18px'} borderRadius={35}>
-              Discover my work
-            </Button>
+            <NavLink to="/projects">
+              <Button padding={'20px 18px'} borderRadius={35}>
+                Discover my work
+              </Button>
+            </NavLink>
             <Button padding={'20px 18px'} borderRadius={35} styleVariant="secondary">
               Hire me
             </Button>
