@@ -11,76 +11,41 @@ const defaultTheme = createTheme({
     secondary: FONTS_DATA.WorkSans.key,
     tertiary: FONTS_DATA.VT323.key,
   },
-  button: {
-    primary: {
-      colors: {
+  colors: {
+    text: {
+      primary: COLORS.blacks,
+      secondary: COLORS.whites,
+    },
+    surface: {
+      primary: COLORS.whites,
+      secondary: COLORS.blacks,
+      attention: COLORS.purple,
+    },
+    border: {
+      primary: COLORS.blacks[200],
+      secondary: COLORS.whites[200],
+    },
+    action: {
+      primary: {
         background: COLORS.lightGreen,
         text: COLORS.blacks[100],
       },
-    },
-    secondary: {
-      colors: {
+      secondary: {
         background: COLORS.blacks[100],
         text: COLORS.whites[100],
       },
-    },
-    link: {
-      colors: {
+      link: {
         background: COLORS.purple,
         text: COLORS.whites[100],
       },
-    },
-    neutral: {
-      colors: {
+      neutral: {
         background: COLORS.whites[200],
         text: COLORS.blacks[400],
       },
     },
-  },
-  link: {
-    primary: {
-      colors: {
-        text: COLORS.blacks[100],
-        icon: COLORS.purple,
-      },
-    },
-  },
-  outlinedImage: {
-    colors: {
-      outline: COLORS.whites[100],
-    },
-  },
-  runningLine: {
-    colors: {
-      background: COLORS.purple,
-      text: COLORS.whites[100],
-    },
-  },
-  header: {
-    opaqueBackground: {
-      colors: {
-        background: 'transparent',
-        text: COLORS.blacks[300],
-        navLinkBackground: COLORS.whites[200],
-        navLinkTextPrimary: COLORS.blacks[400],
-        navLinkTextSecondary: COLORS.purple,
-      },
-    },
-    primary: {
-      colors: {
-        background: COLORS.blacks[300],
-        text: COLORS.whites[100],
-        navLinkBackground: COLORS.blacks[200],
-        navLinkTextPrimary: COLORS.whites[200],
-        navLinkTextSecondary: COLORS.lightGreen,
-      },
-    },
-  },
-  pages: {
-    landing: {
-      colors: {
-        welcomeText: COLORS.blacks[400],
-      },
+    decorative: {
+      primary: COLORS.purple,
+      secondary: COLORS.lightGreen,
     },
   },
   components: {
@@ -134,7 +99,7 @@ const defaultTheme = createTheme({
           },
         },
         body1: {
-          color: COLORS.blacks[100],
+          color: COLORS.blacks[400],
           fontFamily: FONTS_DATA.WorkSans.key,
           fontSize: scaleFontSize(20, 'mobile'),
 
@@ -143,7 +108,7 @@ const defaultTheme = createTheme({
           },
         },
         body2: {
-          color: COLORS.blacks[100],
+          color: COLORS.blacks[400],
           fontFamily: FONTS_DATA.WorkSans.key,
           fontSize: scaleFontSize(18, 'mobile'),
 

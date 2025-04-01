@@ -33,7 +33,7 @@ const HeroSection = styled('div')(({ theme }) => ({
 
       [`.${classNames.bodyContainerText}`]: {
         fontSize: scaleFontSize(20, 'mobile'),
-        color: theme.pages.landing.colors.welcomeText,
+        color: theme.colors.text.primary[400],
         marginBottom: 25,
       },
 

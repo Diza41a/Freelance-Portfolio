@@ -20,6 +20,8 @@ export const COLORS = {
   whites: {
     100: '#FFFFFF',
     200: '#F0EFEF',
+    300: '#D9D9D9',
+    400: ' #B3B3B3',
   },
 };
 

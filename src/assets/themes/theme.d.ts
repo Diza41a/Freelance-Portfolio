@@ -15,45 +15,44 @@ declare module '@mui/material/styles' {
   }
 }
 
-type ButtonStyles = {
-  colors: {
-    background: string;
-    text: string;
+type Colors = {
+  text: {
+    primary: Record<100 | 200 | 300 | 400, string>;
+    secondary: Record<100 | 200 | 300 | 400, string>;
   };
-};
-type LinkStyles = {
-  colors: {
-    text: string;
-    icon: string;
+  surface: {
+    primary: Record<100 | 200 | 300 | 400, string>;
+    secondary: Record<100 | 200 | 300 | 400, string>;
+    attention: string;
   };
-};
-type OutlinedImageStyles = {
-  colors: {
-    outline: string;
+  border: {
+    primary: string;
+    secondary: string;
   };
-};
-type RunningLineStyles = {
-  colors: {
-    background: string;
-    text: string;
-  };
-};
-type HeaderStyles = {
-  colors: {
-    background: string;
-    text: string;
-    navLinkBackground: string;
-    navLinkTextPrimary: string;
-    navLinkTextSecondary: string;
-  };
-};
-type PageStyles = {
-  landing: {
-    colors: {
-      welcomeText: string;
+  action: {
+    primary: {
+      background: string;
+      text: string;
+    };
+    secondary: {
+      background: string;
+      text: string;
+    };
+    link: {
+      background: string;
+      text: string;
+    };
+    neutral: {
+      background: string;
+      text: string;
     };
   };
+  decorative: {
+    primary: string;
+    secondary: string;
+  };
 };
+
 declare module '@mui/material/styles' {
   interface Theme {
     zIndexes: typeof Z_INDEXES;
@@ -62,22 +61,7 @@ declare module '@mui/material/styles' {
       secondary: string;
       tertiary: string;
     };
-    button: {
-      primary: ButtonStyles;
-      secondary: ButtonStyles;
-      link: ButtonStyles;
-      neutral: ButtonStyles;
-    };
-    link: {
-      primary: LinkStyles;
-    };
-    outlinedImage: OutlinedImageStyles;
-    runningLine: RunningLineStyles;
-    header: {
-      opaqueBackground: HeaderStyles;
-      primary: HeaderStyles;
-    };
-    pages: PageStyles;
+    colors: Colors;
   }
   interface ThemeOptions {
     zIndexes: typeof Z_INDEXES;
@@ -86,22 +70,7 @@ declare module '@mui/material/styles' {
       secondary: string;
       tertiary: string;
     };
-    button: {
-      primary: ButtonStyles;
-      secondary: ButtonStyles;
-      link: ButtonStyles;
-      neutral: ButtonStyles;
-    };
-    link: {
-      primary: LinkStyles;
-    };
-    outlinedImage: OutlinedImageStyles;
-    runningLine: RunningLineStyles;
-    header: {
-      opaqueBackground: HeaderStyles;
-      primary: HeaderStyles;
-    };
-    pages: PageStyles;
+    colors: Colors;
   }
 }
 

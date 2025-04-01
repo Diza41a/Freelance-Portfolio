@@ -8,14 +8,14 @@ const RunningLineContainer = styled('div')(({ theme }) => ({
   width: '100%',
   overflow: 'hidden',
   whiteSpace: 'nowrap',
-  backgroundColor: theme.runningLine.colors.background,
+  backgroundColor: theme.colors.surface.attention,
   position: 'relative',
   zIndex: 10,
 
   [`.${classNames.content}`]: {
     display: 'inline-block',
     animation: 'runningLine 50s linear infinite',
-    color: theme.runningLine.colors.text,
+    color: theme.colors.text.secondary[100],
     fontFamily: theme.fonts.secondary,
     padding: '8px 0',
     fontSize: 14,

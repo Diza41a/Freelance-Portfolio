@@ -10,22 +10,22 @@ const Button = styled(MuiButton, {
   const buttonStyleProps: CSSProperties = (() => {
     if (styleVariant === 'secondary') {
       return {
-        backgroundColor: theme.button.secondary.colors.background,
-        color: theme.button.secondary.colors.text,
+        backgroundColor: theme.colors.action.secondary.background,
+        color: theme.colors.action.secondary.text,
         fontFamily: theme.fonts.main,
       };
     } else if (styleVariant === 'link') {
       return {
-        backgroundColor: theme.button.link.colors.background,
-        color: theme.button.link.colors.text,
+        backgroundColor: theme.colors.action.link.background,
+        color: theme.colors.action.link.text,
         fontFamily: theme.fonts.main,
         textTransform: 'none',
       };
     }
 
     return {
-      backgroundColor: theme.button.primary.colors.background,
-      color: theme.button.primary.colors.text,
+      backgroundColor: theme.colors.action.primary.background,
+      color: theme.colors.action.primary.text,
       fontFamily: theme.fonts.main,
     };
   })();

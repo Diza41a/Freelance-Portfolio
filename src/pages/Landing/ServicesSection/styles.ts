@@ -38,14 +38,14 @@ const ServicesSection = styled('div')(({ theme }) => ({
         width: 55,
         height: 55,
         borderRadius: 8,
-        backgroundColor: theme.button.neutral.colors.background,
+        backgroundColor: theme.colors.action.neutral.background,
 
         svg: {
           width: '100%',
           height: '100%',
           transform: 'scale(0.75)',
           strokeWidth: 1.5,
-          color: theme.button.neutral.colors.text,
+          color: theme.colors.action.neutral.text,
         },
       },
 

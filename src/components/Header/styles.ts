@@ -21,7 +21,7 @@ const Header = styled('header')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '0 5%',
-  backgroundColor: theme.header.primary.colors.background,
+  backgroundColor: theme.colors.surface.secondary[300],
   height: HEADER_HEIGHT,
   boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
   transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
@@ -30,7 +30,7 @@ const Header = styled('header')(({ theme }) => ({
     fontFamily: theme.fonts.tertiary,
     fontSize: scaleFontSize(logoLinkFontSize, 'mobile'),
     textDecoration: 'none',
-    color: theme.header.primary.colors.text,
+    color: theme.colors.text.secondary[100],
     transition: 'color 0.2s ease-in-out',
   },
 
@@ -72,7 +72,7 @@ const Header = styled('header')(({ theme }) => ({
         height: 35,
         position: 'relative',
         left: 0,
-        backgroundColor: theme.header.primary.colors.background,
+        backgroundColor: theme.colors.surface.secondary[300],
         transition: 'left 0.3s ease-in-out, background-color 0.2s ease-in-out',
         fontSize: 20,
         fontFamily: theme.fonts.secondary,
@@ -84,22 +84,22 @@ const Header = styled('header')(({ theme }) => ({
           width: '100%',
           height: '100%',
           textAlign: 'center',
-          borderTop: `1px inset ${theme.header.primary.colors.navLinkTextPrimary}`,
+          borderTop: `1px inset ${theme.colors.text.secondary[200]}`,
           textDecoration: 'none',
-          color: theme.header.primary.colors.text,
+          color: theme.colors.text.secondary[100],
           transition: 'color 0.2s ease-in-out',
         },
 
         '&:hover': {
-          backgroundColor: theme.header.primary.colors.navLinkTextSecondary,
+          backgroundColor: theme.colors.decorative.secondary,
 
           a: {
-            color: theme.header.primary.colors.navLinkBackground,
+            color: theme.colors.surface.secondary[200],
           },
         },
 
         '&:last-of-type': {
-          borderBottom: `1px inset ${theme.header.primary.colors.navLinkTextPrimary}`,
+          borderBottom: `1px inset ${theme.colors.text.secondary[200]}`,
         },
 
         ...(() => {
@@ -120,20 +120,20 @@ const Header = styled('header')(({ theme }) => ({
     },
 
     '.hamburger-react': {
-      color: theme.header.primary.colors.text,
+      color: theme.colors.text.secondary[100],
     },
   },
 
   [`&.${classNames.opaqueBackground}`]: {
-    backgroundColor: theme.header.opaqueBackground.colors.background,
+    backgroundColor: 'transparent',
     boxShadow: 'none',
 
     [`.${classNames.logoLink}`]: {
-      color: theme.header.opaqueBackground.colors.text,
+      color: theme.colors.text.primary[300],
     },
 
     '.hamburger-react': {
-      color: theme.header.opaqueBackground.colors.text,
+      color: theme.colors.text.primary[300],
     },
   },
 
@@ -160,7 +160,7 @@ const Header = styled('header')(({ theme }) => ({
         li: {
           position: 'static',
           fontSize: navLinkFontSize,
-          backgroundColor: theme.header.primary.colors.navLinkBackground,
+          backgroundColor: theme.colors.surface.secondary[200],
           borderRadius: 23,
           transitionDelay: '0s !important',
 
@@ -170,12 +170,12 @@ const Header = styled('header')(({ theme }) => ({
           },
 
           '&:hover': {
-            outline: `1px solid ${theme.header.primary.colors.navLinkTextSecondary}`,
+            outline: `1px solid ${theme.colors.decorative.secondary}`,
             outlineOffset: -1,
-            backgroundColor: theme.header.primary.colors.navLinkBackground,
+            backgroundColor: theme.colors.surface.secondary[200],
 
             a: {
-              color: theme.header.primary.colors.navLinkTextSecondary,
+              color: theme.colors.decorative.secondary,
             },
           },
 
@@ -194,17 +194,17 @@ const Header = styled('header')(({ theme }) => ({
       nav: {
         ul: {
           li: {
-            backgroundColor: theme.header.opaqueBackground.colors.navLinkBackground,
+            backgroundColor: theme.colors.surface.primary[200],
 
             a: {
-              color: theme.header.opaqueBackground.colors.navLinkTextPrimary,
+              color: theme.colors.text.primary[400],
             },
 
             '&:hover': {
-              outlineColor: theme.header.opaqueBackground.colors.navLinkTextSecondary,
+              outlineColor: theme.colors.decorative.primary,
 
               a: {
-                color: theme.header.opaqueBackground.colors.navLinkTextSecondary,
+                color: theme.colors.decorative.primary,
               },
             },
           },

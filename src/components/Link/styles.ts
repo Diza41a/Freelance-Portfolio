@@ -15,7 +15,7 @@ const Link = styled('a', {
   const linkStyleProps: CSSProperties = {
     fontFamily: theme.fonts.tertiary,
     textTransform: 'uppercase',
-    color: theme.link.primary.colors.text,
+    color: theme.colors.text.primary[100],
   };
 
   return {
@@ -33,7 +33,7 @@ const Link = styled('a', {
       },
 
       [`.${classNames.icon}`]: {
-        color: theme.link.primary.colors.icon,
+        color: theme.colors.decorative.primary,
         width: 18,
         height: 18,
       },
@@ -45,7 +45,7 @@ const Link = styled('a', {
         left: 0,
         height: 2,
         width: 0,
-        backgroundColor: theme.link.primary.colors.text,
+        backgroundColor: theme.colors.text.primary[100],
         transition: 'width 0.1s linear',
       },
 
