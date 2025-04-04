@@ -1,5 +1,11 @@
 import { Z_INDEXES } from './constants';
 
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    body3: true;
+  }
+}
+
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
     xs: false;
@@ -17,12 +23,12 @@ declare module '@mui/material/styles' {
 
 type Colors = {
   text: {
-    primary: Record<100 | 200 | 300 | 400, string>;
-    secondary: Record<100 | 200 | 300 | 400, string>;
+    primary: Record<100 | 200 | 300 | 400 | 500, string>;
+    secondary: Record<100 | 200 | 300 | 400 | 500, string>;
   };
   surface: {
-    primary: Record<100 | 200 | 300 | 400, string>;
-    secondary: Record<100 | 200 | 300 | 400, string>;
+    primary: Record<100 | 200 | 300 | 400 | 500, string>;
+    secondary: Record<100 | 200 | 300 | 400 | 500, string>;
     attention: string;
   };
   border: {
@@ -54,6 +60,12 @@ type Colors = {
 };
 
 declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    body3: React.CSSProperties;
+  }
+  interface TypographyVariantsOptions {
+    body3?: React.CSSProperties;
+  }
   interface Theme {
     zIndexes: typeof Z_INDEXES;
     fonts: {

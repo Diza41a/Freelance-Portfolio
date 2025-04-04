@@ -4,7 +4,11 @@ import { styled } from '@mui/material';
 import PageTopRightCornerImage from '../assets/images/PageTopRightCorner.svg';
 import { useRef } from 'react';
 
-const TopCornerBackgroundImageWrapper = styled('div')(({ theme }) => ({
+export const classNames = {
+  root: 'TopCornerBackgroundImageContainer',
+};
+
+const TopCornerBackgroundImageContainer = styled('div')(({ theme }) => ({
   position: 'absolute',
   top: 0,
   right: 0,
@@ -25,19 +29,23 @@ const TopCornerBackgroundImageWrapper = styled('div')(({ theme }) => ({
 }));
 
 const TopCornerBackgroundImage = () => {
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
   const tl = gsap.timeline({
     repeat: -1,
     yoyo: true,
   });
   useGSAP(() => {
-    tl.fromTo(imageWrapperRef.current, { rotate: -14 }, { rotate: 4, duration: 15, ease: 'sine' });
+    tl.fromTo(
+      imageContainerRef.current,
+      { rotate: -14 },
+      { rotate: 4, duration: 15, ease: 'sine' },
+    );
   }, []);
 
   return (
-    <TopCornerBackgroundImageWrapper ref={imageWrapperRef}>
+    <TopCornerBackgroundImageContainer ref={imageContainerRef} className={classNames.root}>
       <img src={PageTopRightCornerImage} alt="" />
-    </TopCornerBackgroundImageWrapper>
+    </TopCornerBackgroundImageContainer>
   );
 };
 

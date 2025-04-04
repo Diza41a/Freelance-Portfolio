@@ -3,10 +3,20 @@ import { styled, Button as MuiButton } from '@mui/material';
 import type { ButtonProps } from './props';
 import type { CSSProperties } from 'react';
 
+export const classNames = {
+  root: 'Button',
+};
+
 const Button = styled(MuiButton, {
   shouldForwardProp: (prop: string) =>
     !['styleVariant', 'borderRadius', 'padding', 'fontSize'].includes(prop),
-})<ButtonProps>(({ theme, styleVariant, fontSize = 16, padding, borderRadius }) => {
+})<ButtonProps>(({
+  theme,
+  styleVariant,
+  fontSize = 16,
+  padding = '8px 16px',
+  borderRadius = 8,
+}) => {
   const buttonStyleProps: CSSProperties = (() => {
     if (styleVariant === 'secondary') {
       return {

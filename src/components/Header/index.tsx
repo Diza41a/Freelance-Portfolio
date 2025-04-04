@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation } from 'react-router';
 import Hamburger from 'hamburger-react';
 import S, { classNames } from './styles';
 
@@ -12,6 +12,7 @@ const NAV_LINKS = [
 ];
 
 const Header = () => {
+  const location = useLocation();
   const headerRef = useRef<HTMLHeadElement>(null);
   const [isBurgerExpanded, setIsBurgerExpanded] = useState(false);
 
@@ -42,7 +43,7 @@ const Header = () => {
   );
   const LogoLink = (
     <NavLink to="/" className={classNames.logoLink}>
-      Dayzik
+      WIP
     </NavLink>
   );
 
@@ -95,6 +96,10 @@ const Header = () => {
       window.removeEventListener('click', toggleBurgerMenuOnExternalClick);
     };
   }, [isBurgerExpanded]);
+
+  useLayoutEffect(() => {
+    setIsBurgerExpanded(false);
+  }, [location.pathname]);
 
   return (
     <S.Header ref={headerRef} className={headerClassNames.join(' ')}>

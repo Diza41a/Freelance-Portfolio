@@ -4,10 +4,7 @@ export const classNames = {
   root: 'Landing',
 };
 
-const LandingPage = styled('div')(() => ({
-  position: 'relative',
-  overflowX: 'hidden',
-}));
+const LandingPage = styled('div')(() => ({}));
 
 export default {
   LandingPage,

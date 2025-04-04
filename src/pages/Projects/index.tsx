@@ -1,5 +1,8 @@
+import { useGSAP } from '@gsap/react';
 import TitleBox from '../../components/TitleBox';
-import S from './styles';
+import ProjectsGrid from './ProjectsGrid';
+import { generateProjectsPageTimeline } from './utils';
+import S, { classNames } from './styles';
 
 const ProjectsPage = () => {
   const titleBoxDescription =
@@ -9,14 +12,18 @@ const ProjectsPage = () => {
     { label: 'Projects', path: '/projects' },
   ];
 
+  useGSAP(() => {
+    generateProjectsPageTimeline();
+  }, []);
+
   return (
-    <S.ProjectsPage>
+    <S.ProjectsPage className={classNames.root}>
       <TitleBox
         title="Featured Projects"
         description={titleBoxDescription}
         breadcrumbLinks={titleBoxBreadcrumbLinks}
       />
-      lol
+      <ProjectsGrid />
     </S.ProjectsPage>
   );
 };

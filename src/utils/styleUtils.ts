@@ -1,3 +1,7 @@
+import { BREAKPOINTS } from '../assets/themes/constants';
+import type { CSSObject } from '@mui/material';
+import type { BreakpointKeys as DefaultBreakpointKeys } from '../assets/themes/constants';
+
 export const scalePadding = (padding: string | number, scaleFactor: number | 'mobile'): string => {
   const scaleFactorValue = (() => {
     if (scaleFactor === 'mobile') {
@@ -50,4 +54,25 @@ export const scaleFontSize = (
   const fontSizeValue = parseFloat(fontSizeValueStr);
   const scaledFontSize = fontSizeValue * scaleFactorValue;
   return `${scaledFontSize}${fontSizeUnit}`;
+};
+
+type BreakpointKeys = DefaultBreakpointKeys | 'default';
+const breakpoints = BREAKPOINTS.values;
+export const responsive = (styles: Partial<Record<BreakpointKeys, CSSObject>>): CSSObject => {
+  let responsiveStyles: CSSObject = {};
+
+  Object.entries(styles).forEach(([breakpoint, style]) => {
+    if (breakpoint === 'default') {
+      responsiveStyles = { ...responsiveStyles, ...style };
+    } else {
+      // @ts-ignore;
+      const minWidth = breakpoints[breakpoint];
+      if (minWidth) {
+        // @ts-ignore
+        responsiveStyles[`@media (min-width:${minWidth}px)`] = style;
+      }
+    }
+  });
+
+  return responsiveStyles;
 };

@@ -1,10 +1,10 @@
-type BreadcrumbLink = {
+type BreadcrumbLinkData = {
   label: string;
   path: string;
 };
 
 export interface TitleBoxProps {
   title: string;
-  breadcrumbLinks: BreadcrumbLink[];
+  breadcrumbLinks: BreadcrumbLinkData[];
   description?: string;
 }

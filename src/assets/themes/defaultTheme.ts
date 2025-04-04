@@ -22,7 +22,7 @@ const defaultTheme = createTheme({
       attention: COLORS.purple,
     },
     border: {
-      primary: COLORS.blacks[200],
+      primary: '#979797',
       secondary: COLORS.whites[200],
     },
     action: {
@@ -46,6 +46,17 @@ const defaultTheme = createTheme({
     decorative: {
       primary: COLORS.purple,
       secondary: COLORS.lightGreen,
+    },
+  },
+  typography: {
+    body3: {
+      color: COLORS.blacks[400],
+      fontFamily: FONTS_DATA.WorkSans.key,
+      fontSize: scaleFontSize(16, 'mobile'),
+
+      [`@media (min-width:${BREAKPOINTS.values.tablet}px)`]: {
+        fontSize: 16,
+      },
     },
   },
   components: {
@@ -85,6 +96,16 @@ const defaultTheme = createTheme({
 
           [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
             fontSize: 36,
+          },
+        },
+        h4: {
+          color: COLORS.blacks[100],
+          fontFamily: FONTS_DATA.SpaceGrotesk.key,
+          fontSize: scaleFontSize(28, 'mobile'),
+          fontWeight: 'bold',
+
+          [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
+            fontSize: 28,
           },
         },
         h5: {

@@ -1,4 +1,17 @@
-export const BREAKPOINTS = {
+export type BreakpointKeys =
+  | 'mobileLandscape'
+  | 'tablet'
+  | 'desktop'
+  | 'largeDesktop'
+  | 'extraLargeDesktop';
+
+export type Breakpoints = {
+  values: {
+    [key in BreakpointKeys]: number;
+  };
+};
+
+export const BREAKPOINTS: Breakpoints = {
   values: {
     mobileLandscape: 576,
     tablet: 768,
@@ -15,6 +28,7 @@ export const COLORS = {
     200: '#1d1d1d',
     300: '#282828',
     400: '#373636',
+    500: '#939393',
   },
   purple: '#6805F1',
   whites: {
@@ -22,6 +36,7 @@ export const COLORS = {
     200: '#F0EFEF',
     300: '#D9D9D9',
     400: ' #B3B3B3',
+    500: '#999999',
   },
 };
 
