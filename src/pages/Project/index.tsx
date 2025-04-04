@@ -3,7 +3,7 @@ import { classNames as topCornerBackgroundImageClassNames } from '../../componen
 import S, { classNames } from './styles';
 import { PROJECTS } from '../../data/projects';
 import { formatStringToUriPath } from '../../utils/apiUtils';
-import { useLocation, useNavigate } from 'react-router';
+import { Navigate, useLocation } from 'react-router';
 import { Breadcrumbs, Divider, Typography, useTheme } from '@mui/material';
 import BreadcrumbLink from '../../components/BreadcrumbLink';
 import Button from '../../components/Button';
@@ -11,13 +11,12 @@ import ProjectCard from '../../components/ProjectCard';
 
 const ProjectPage = () => {
   const theme = useTheme();
-  const navigate = useNavigate();
 
   const projectNameFromUriPath = useLocation().pathname.split('/').pop();
   const projectI = PROJECTS.findIndex(
     ({ title: projectTitle }) => formatStringToUriPath(projectTitle) === projectNameFromUriPath,
   );
-  if (projectI < 0) return navigate('/projects');
+  if (projectI < 0) return <Navigate to="/projects" />;
 
   const project = PROJECTS[projectI];
   const prevProject = projectI > 0 ? PROJECTS[projectI - 1] : null;
