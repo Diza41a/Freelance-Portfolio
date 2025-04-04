@@ -18,6 +18,7 @@ export const classNames = {
   detailsBlock: 'Project-DetailsBlock',
   feedbackContainer: 'Project-FeedbackContainer',
   feedbackText: 'Project-FeedbackText',
+  feedbackAuthor: 'Project-FeedbackAuthor',
   navButtonsContainer: 'Project-NavButtonsContainer',
   navButtons: 'Project-NavButtons',
   prevProjectButton: 'Project-PrevProjectButton',
@@ -354,6 +355,7 @@ const ProjectPage = styled('div')(({ theme }) => ({
   },
 
   [`.${classNames.navButtonsContainer}`]: {
+    overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
 

@@ -6,8 +6,8 @@ import {
   ChartLine as MaintenanceIcon,
   Puzzle as MoreComingSoonIcon,
 } from 'lucide-react';
-import { useGSAP } from '@gsap/react';
 import { createServicesSectionTimeline } from './utils';
+import { useVisitedGSAP } from '../../../hooks/useVisitedGSAP';
 
 const SERVICES = [
   {
@@ -34,7 +34,7 @@ const SERVICES = [
 ];
 
 const ServicesSection = () => {
-  useGSAP(() => {
+  useVisitedGSAP(() => {
     createServicesSectionTimeline();
   });
 

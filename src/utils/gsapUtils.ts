@@ -1,12 +1,14 @@
 import gsap from 'gsap';
 
+type CSSSelector = string | Element | Element[] | NodeListOf<Element>;
+
 export const generateTitleTween = ({
   cssSelector,
   scrollTriggerSelector = '',
   withScrollTrigger = true,
 }: {
-  cssSelector: string;
-  scrollTriggerSelector?: string;
+  cssSelector: CSSSelector;
+  scrollTriggerSelector?: CSSSelector;
   withScrollTrigger?: boolean;
 }) => {
   const tweenConfig: gsap.TweenVars = {
@@ -33,8 +35,8 @@ export const generateDivFadeInTween = ({
   withScrollTrigger = true,
   stagger = 0,
 }: {
-  cssSelector: string;
-  scrollTriggerSelector?: string;
+  cssSelector: CSSSelector;
+  scrollTriggerSelector?: CSSSelector;
   withScrollTrigger?: boolean;
   stagger?: number;
 }) => {
@@ -64,8 +66,8 @@ export const generateSlideInTween = ({
   stagger = 0,
 }: {
   scrollDirection: 'top' | 'bottom' | 'left' | 'right';
-  cssSelector: string;
-  scrollTriggerSelector?: string;
+  cssSelector: CSSSelector;
+  scrollTriggerSelector?: CSSSelector;
   withScrollTrigger?: boolean;
   stagger?: number;
 }) => {

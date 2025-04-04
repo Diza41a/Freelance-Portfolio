@@ -8,6 +8,8 @@ import { Breadcrumbs, Divider, Typography, useTheme } from '@mui/material';
 import BreadcrumbLink from '../../components/BreadcrumbLink';
 import Button from '../../components/Button';
 import ProjectCard from '../../components/ProjectCard';
+import { generateProjectPageTweens } from './utils';
+import { useVisitedGSAP } from '../../hooks/useVisitedGSAP';
 
 const ProjectPage = () => {
   const theme = useTheme();
@@ -122,7 +124,7 @@ const ProjectPage = () => {
           const formattedName = `${firstName} ${lastName[0]}`;
 
           return (
-            <Typography variant="body3">
+            <Typography variant="body3" className={classNames.feedbackAuthor}>
               <span
                 style={{
                   fontFamily: theme.fonts.main,
@@ -185,6 +187,10 @@ const ProjectPage = () => {
       topCornerBackgroundImageEl.style.display = 'block';
     };
   }, []);
+
+  useVisitedGSAP(() => {
+    generateProjectPageTweens();
+  });
 
   return (
     <S.ProjectPage>

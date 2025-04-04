@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
@@ -31,6 +31,7 @@ injectFont(FONTS_DATA.WorkSans.key, FONTS_DATA.WorkSans.path);
 injectFont(FONTS_DATA.VT323.key, FONTS_DATA.VT323.path);
 
 const App = () => {
+  const visitedPagesRef = useRef<Map<string, boolean>>(new Map());
   const currentTheme = getCurrentTheme();
   const [theme, setTheme] = useState(currentTheme);
 
@@ -39,6 +40,7 @@ const App = () => {
       <GlobalContext
         value={{
           themeState: [theme, setTheme],
+          visitedPagesRef,
         }}
       >
         <ThemeProvider theme={theme}>

@@ -1,8 +1,8 @@
-import { useGSAP } from '@gsap/react';
 import TitleBox from '../../components/TitleBox';
 import ProjectsGrid from './ProjectsGrid';
 import { generateProjectsPageTimeline } from './utils';
 import S, { classNames } from './styles';
+import { useVisitedGSAP } from '../../hooks/useVisitedGSAP';
 
 const ProjectsPage = () => {
   const titleBoxDescription =
@@ -12,9 +12,9 @@ const ProjectsPage = () => {
     { label: 'Projects', path: '/projects' },
   ];
 
-  useGSAP(() => {
+  useVisitedGSAP(() => {
     generateProjectsPageTimeline();
-  }, []);
+  });
 
   return (
     <S.ProjectsPage className={classNames.root}>

@@ -1,5 +1,4 @@
 import { Divider, Typography } from '@mui/material';
-import { useGSAP } from '@gsap/react';
 import Button from '../../../components/Button';
 import Link from '../../../components/Link';
 import { createHeroSectionTimeline } from './utils';
@@ -9,9 +8,10 @@ import ProfilePhoto from '../../../assets/images/ProfilePhoto.jpeg';
 import ResumePdf from '../../../assets/docs/Resume.pdf';
 import RunningLine from './RunningLine';
 import { NavLink } from 'react-router';
+import { useVisitedGSAP } from '../../../hooks/useVisitedGSAP';
 
 const HeroSection = () => {
-  useGSAP(() => {
+  useVisitedGSAP(() => {
     createHeroSectionTimeline();
   });
 
