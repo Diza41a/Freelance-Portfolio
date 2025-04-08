@@ -20,18 +20,23 @@ const generateBreadcrumbsTween = () =>
     withScrollTrigger: false,
   });
 
-const generateDescriptionTween = () =>
-  generateSlideInTween({
+const generateDescriptionTween = () => {
+  const descriptionEl = document.querySelector(`.${classNames.description}`);
+  if (!descriptionEl) return null;
+
+  return generateSlideInTween({
     cssSelector: `.${classNames.description}`,
     scrollTriggerSelector: `.${classNames.titleContainer}`,
     withScrollTrigger: false,
     scrollDirection: 'right',
   });
+};
 
 export const generateTitleBoxTimeline = () => {
   const timeline = gsap.timeline();
   timeline.add(generateTitleTextTween());
   timeline.add(generateBreadcrumbsTween(), '-=0.85');
-  timeline.add(generateDescriptionTween(), '-=0.85');
+  const descriptionTween = generateDescriptionTween();
+  if (descriptionTween) timeline.add(descriptionTween, '-=0.85');
   return timeline;
 };

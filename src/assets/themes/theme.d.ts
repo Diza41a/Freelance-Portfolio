@@ -25,6 +25,7 @@ type Colors = {
   text: {
     primary: Record<100 | 200 | 300 | 400 | 500, string>;
     secondary: Record<100 | 200 | 300 | 400 | 500, string>;
+    error: string;
   };
   surface: {
     primary: Record<100 | 200 | 300 | 400 | 500, string>;

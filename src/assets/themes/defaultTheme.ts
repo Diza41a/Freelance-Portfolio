@@ -3,6 +3,27 @@ import { BREAKPOINTS, COLORS, Z_INDEXES } from './constants';
 import { FONTS_DATA } from '../../utils/fontInjector';
 import { scaleFontSize } from '../../utils/styleUtils';
 
+const typography = {
+  body2: {
+    color: COLORS.blacks[400],
+    fontFamily: FONTS_DATA.WorkSans.key,
+    fontSize: scaleFontSize(18, 'mobile'),
+
+    [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
+      fontSize: 18,
+    },
+  },
+  body3: {
+    color: COLORS.blacks[400],
+    fontFamily: FONTS_DATA.WorkSans.key,
+    fontSize: scaleFontSize(16, 'mobile'),
+
+    [`@media (min-width:${BREAKPOINTS.values.tablet}px)`]: {
+      fontSize: 16,
+    },
+  },
+};
+
 const defaultTheme = createTheme({
   breakpoints: BREAKPOINTS,
   zIndexes: Z_INDEXES,
@@ -15,6 +36,7 @@ const defaultTheme = createTheme({
     text: {
       primary: COLORS.blacks,
       secondary: COLORS.whites,
+      error: '#D32F2F',
     },
     surface: {
       primary: COLORS.whites,
@@ -48,17 +70,7 @@ const defaultTheme = createTheme({
       secondary: COLORS.lightGreen,
     },
   },
-  typography: {
-    body3: {
-      color: COLORS.blacks[400],
-      fontFamily: FONTS_DATA.WorkSans.key,
-      fontSize: scaleFontSize(16, 'mobile'),
-
-      [`@media (min-width:${BREAKPOINTS.values.tablet}px)`]: {
-        fontSize: 16,
-      },
-    },
-  },
+  typography,
   components: {
     MuiTypography: {
       styleOverrides: {
@@ -129,13 +141,7 @@ const defaultTheme = createTheme({
           },
         },
         body2: {
-          color: COLORS.blacks[400],
-          fontFamily: FONTS_DATA.WorkSans.key,
-          fontSize: scaleFontSize(18, 'mobile'),
-
-          [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
-            fontSize: 18,
-          },
+          ...typography.body2,
         },
       },
     },

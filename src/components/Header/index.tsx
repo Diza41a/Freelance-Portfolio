@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { name: 'About', path: '/' },
   { name: 'Services', path: '/' },
   { name: 'Projects', path: '/projects' },
-  { name: 'Contacts', path: '/' },
+  { name: 'Contacts', path: '/contact' },
 ];
 
 const Header = () => {

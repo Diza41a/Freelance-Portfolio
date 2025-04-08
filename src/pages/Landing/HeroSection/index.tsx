@@ -42,9 +42,11 @@ const HeroSection = () => {
                 Discover my work
               </Button>
             </NavLink>
-            <Button padding={'20px 18px'} borderRadius={35} styleVariant="secondary">
-              Hire me
-            </Button>
+            <NavLink to="/contact">
+              <Button padding={'20px 18px'} borderRadius={35} styleVariant="secondary">
+                Hire me
+              </Button>
+            </NavLink>
           </div>
           <div className={classNames.bodyContainerLinks}>
             <Link

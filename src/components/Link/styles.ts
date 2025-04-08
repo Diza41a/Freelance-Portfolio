@@ -21,6 +21,8 @@ const Link = styled('a', {
   return {
     ...linkStyleProps,
     textDecoration: 'none',
+    display: 'block',
+    width: 'fit-content',
 
     [`.${classNames.textWrapper}`]: {
       fontSize: scaleFontSize(20, 'mobile'),

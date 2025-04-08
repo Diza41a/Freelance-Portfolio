@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import LandingPage from './pages/Landing';
 import ProjectsPage from './pages/Projects';
 import ProjectPage from './pages/Project';
+import ContactPage from './pages/Contact';
 
 export type RouteFixture = {
   path: string;
@@ -20,5 +21,9 @@ export const ROUTES: RouteFixture[] = [
   {
     path: '/projects/:projectName',
     element: <ProjectPage />,
+  },
+  {
+    path: '/contact',
+    element: <ContactPage />,
   },
 ];

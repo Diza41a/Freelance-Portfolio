@@ -22,6 +22,7 @@ const TitleBoxContainer = styled('div', {
     flexBasis: hasDescription ? '45%' : '100%',
     h2: {
       marginBottom: 14,
+      width: 'fit-content',
     },
 
     'li, li>*': {
