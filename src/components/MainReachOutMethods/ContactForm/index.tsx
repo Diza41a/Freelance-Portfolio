@@ -6,6 +6,7 @@ import InputLabel from '../../InputLabel';
 import type { ContactFormProps, ContactFormValues } from './props';
 import { useVisitedGSAP } from '../../../hooks/useVisitedGSAP';
 import { generateContactFormTween } from './utils';
+import { sendEmail } from '../../../api/email.api';
 
 const ContactForm = (props: ContactFormProps) => {
   const { styleVariant = 'default' } = props;
@@ -15,8 +16,14 @@ const ContactForm = (props: ContactFormProps) => {
     formState: { errors },
   } = useForm<ContactFormValues>();
 
-  const onSubmit = (data: ContactFormValues) => {
-    console.log('Form submitted:', data);
+  const onSubmit = (emailInputDto: ContactFormValues) => {
+    sendEmail(emailInputDto)
+      .then((res) => {
+        console.log({ res });
+      })
+      .catch((err) => {
+        console.error({ err });
+      });
   };
 
   const mergeNameFieldClassNames = (className: string) =>
@@ -83,7 +90,7 @@ const ContactForm = (props: ContactFormProps) => {
         )}
       />
       <Controller
-        name="phoneNumber"
+        name="phone"
         control={control}
         defaultValue=""
         rules={{
@@ -98,8 +105,8 @@ const ContactForm = (props: ContactFormProps) => {
             <TextField
               {...field}
               placeholder="Phone Number"
-              error={!!errors.phoneNumber}
-              helperText={errors.phoneNumber ? errors.phoneNumber.message : ''}
+              error={!!errors.phone}
+              helperText={errors.phone ? errors.phone.message : ''}
               styleVariant={styleVariant}
             />
           </div>
