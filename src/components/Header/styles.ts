@@ -218,7 +218,7 @@ const Header = styled('header')(({ theme }) => ({
   },
 
   [theme.breakpoints.up('largeDesktop')]: {
-    padding: '0 20%',
+    padding: '0 15%',
   },
 }));
 

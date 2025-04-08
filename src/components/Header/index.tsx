@@ -5,7 +5,6 @@ import S, { classNames } from './styles';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
-  { name: 'About', path: '/' },
   { name: 'Services', path: '/' },
   { name: 'Projects', path: '/projects' },
   { name: 'Contacts', path: '/contact' },
