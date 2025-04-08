@@ -13,6 +13,7 @@ const Button = (props: ButtonProps): JSX.Element => {
     target = '_blank',
     rel = 'noopener noreferrer',
     className = '',
+    disabled,
     ...rest
   } = props;
 
@@ -27,6 +28,7 @@ const Button = (props: ButtonProps): JSX.Element => {
       borderRadius={borderRadius}
       component={component}
       className={`${classNames.root} ${className}`}
+      disabled={disabled}
       {...anchorProps}
     >
       {children}

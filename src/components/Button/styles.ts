@@ -16,6 +16,7 @@ const Button = styled(MuiButton, {
   fontSize = 16,
   padding = '8px 16px',
   borderRadius = 8,
+  disabled,
 }) => {
   const buttonStyleProps: CSSProperties = (() => {
     if (styleVariant === 'secondary') {
@@ -46,6 +47,7 @@ const Button = styled(MuiButton, {
     fontSize: scaleFontSize(fontSize, 'mobile'),
     padding: scalePadding(padding, 'mobile'),
     transition: 'transform 0.3s ease-in-out',
+    ...(disabled && { cursor: 'not-allowed' }),
 
     '&:hover': {
       transform: 'translateY(-2px)',
