@@ -1,6 +1,6 @@
 import { PROJECTS } from '../../../data/projects';
 import ProjectCard from '../../../components/ProjectCard';
-import { S } from './styles';
+import S from './styles';
 
 const ProjectsGrid = () => {
   return (

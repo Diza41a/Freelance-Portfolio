@@ -1,3 +1,6 @@
+/**
+ * @note Images should respect 16:9 aspect ratio.
+ */
 type Media = {
   type: 'imageUrl' | 'videoUrl';
   alt?: string;
@@ -54,8 +57,7 @@ export const PROJECTS: Project[] = [
     media: {
       cover: {
         type: 'imageUrl',
-        source:
-          'https://www.blissmarcom.com/wp-content/uploads/2024/04/LANDING-PAGES-VS.-HOME-PAGES-2.jpg',
+        source: 'https://i.ibb.co/7JYPHn0p/Screenshot-2025-04-09-at-1-05-07-PM.png',
       },
       media1: {
         type: 'imageUrl',

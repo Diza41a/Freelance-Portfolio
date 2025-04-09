@@ -1,61 +1,54 @@
 import { styled } from '@mui/material';
 
 import { classNames as projectCardClassNames } from '../../../components/ProjectCard/styles';
+import { responsive } from '../../../utils/styleUtils';
 
 export const classNames = {};
 
-const ProjectsGridContainer = styled('div')(({ theme }) => ({
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '16px 0',
+const ProjectsGridContainer = styled('div')(() => {
+  // Preserving the 16:9 aspect ratio for the cover image
+  const desktopCoverImageHeight = `calc(40vw * 0.5625 - 18px)`;
 
-  [`.${projectCardClassNames.root}`]: {
-    [`.${projectCardClassNames.coverImage}`]: {
-      height: 200,
-      objectFit: 'cover',
-    },
-  },
-
-  [theme.breakpoints.up('tablet')]: {
-    gap: '24px 0',
+  return {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    ...responsive({
+      default: {
+        gap: '16px 0',
+      },
+      tablet: {
+        gap: '24px 0',
+      },
+      largeDesktop: {
+        gap: '32px 18px',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'stretch',
+        justifyContent: 'flex-start',
+      },
+    }),
 
     [`.${projectCardClassNames.root}`]: {
-      [`.${projectCardClassNames.coverImage}`]: {
-        height: 350,
-      },
-    },
-  },
-
-  [theme.breakpoints.up('desktop')]: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: '32px 18px',
-
-    [`.${projectCardClassNames.root}`]: {
-      flexBasis: 'calc(50% - 9px)',
+      ...responsive({
+        largeDesktop: {
+          flexBasis: 'calc(50% - 16px)',
+        },
+      }),
 
       [`.${projectCardClassNames.coverImage}`]: {
-        height: 250,
+        objectFit: 'cover',
+        ...responsive({
+          largeDesktop: {
+            height: desktopCoverImageHeight,
+          },
+        }),
       },
     },
-  },
+  };
+});
 
-  [theme.breakpoints.up('largeDesktop')]: {
-    justifyContent: 'center',
-
-    [`.${projectCardClassNames.root}`]: {
-      flexBasis: 'unset',
-      minWidth: 550,
-      width: 'calc(33.33% - 12px)',
-
-      [`.${projectCardClassNames.coverImage}`]: {
-        height: 450,
-      },
-    },
-  },
-}));
-
-export const S = {
+export default {
   ProjectsGridContainer,
 };
