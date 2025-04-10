@@ -1,4 +1,4 @@
-import { styled } from '@mui/material';
+import { alpha, styled } from '@mui/material';
 import { responsive, scaleFontSize } from '../../utils/styleUtils';
 import { classNames as themeToggleClassNames } from '../ThemeToggle';
 
@@ -33,7 +33,7 @@ const Header = styled('header')(({ theme }) => ({
         boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
       }
     : {
-        borderBottom: `1px solid ${theme.colors.border.primary}`,
+        borderBottom: `1px solid ${alpha(theme.colors.border.primary, 0.4)}`,
       }),
   transition:
     'background-color 0.2s ease-in-out, top 0.2s ease-in-out, border-color 0.2s ease-in-out',
