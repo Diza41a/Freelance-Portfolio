@@ -33,10 +33,10 @@ const Header = styled('header')(({ theme }) => ({
         boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
       }
     : {
-        borderBottom: `1px solid ${alpha(theme.colors.border.primary, 0.4)}`,
+        outline: `1px solid ${alpha(theme.colors.border.primary, 0.4)}`,
       }),
   transition:
-    'background-color 0.2s ease-in-out, top 0.2s ease-in-out, border-color 0.2s ease-in-out',
+    'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
     fontFamily: theme.fonts.tertiary,
@@ -164,7 +164,7 @@ const Header = styled('header')(({ theme }) => ({
   [`&.${classNames.opaqueBackground}`]: {
     backgroundColor: 'transparent',
     boxShadow: 'none',
-    borderBottom: 'none',
+    outline: 'none',
 
     [`.${classNames.logoLink}`]: {
       color: theme.colors.text.primary[300],
