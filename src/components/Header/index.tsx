@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router';
 import Hamburger from 'hamburger-react';
 import S, { classNames } from './styles';
+import ThemeToggle from '../ThemeToggle';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -102,7 +103,10 @@ const Header = () => {
   return (
     <S.Header ref={headerRef} className={headerClassNames.join(' ')}>
       {LogoLink}
-      {NavMenu}
+      <div className={classNames.navMenuContainer}>
+        <ThemeToggle />
+        {NavMenu}
+      </div>
     </S.Header>
   );
 };

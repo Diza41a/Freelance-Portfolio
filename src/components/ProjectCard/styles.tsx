@@ -15,6 +15,7 @@ const ProjectCard = styled(NavLink)(({ theme }) => ({
   [`.${classNames.coverImage}`]: {
     width: '100%',
     marginBottom: 12,
+    transition: 'box-shadow 0.2s ease-in-out',
   },
 
   [`.${classNames.title}`]: {
@@ -30,6 +31,14 @@ const ProjectCard = styled(NavLink)(({ theme }) => ({
     span: {
       textTransform: 'uppercase',
       fontWeight: 'bold',
+    },
+  },
+
+  '&:hover': {
+    [`.${classNames.coverImage}`]: {
+      ...(theme.name === 'night' && {
+        boxShadow: `0 0 10px 0 ${theme.colors.decorative.secondary}`,
+      }),
     },
   },
 

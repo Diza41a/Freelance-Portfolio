@@ -1,9 +1,14 @@
 import defaultTheme from './defaultTheme';
+import nightTheme from './nightTheme';
 
-const themeOptions = [
+const THEME_OPTIONS = [
   {
     name: 'default',
     value: defaultTheme,
+  },
+  {
+    name: 'night',
+    value: nightTheme,
   },
 ];
 
@@ -19,13 +24,13 @@ export const getCurrentThemeName = () => {
 
 export const getCurrentTheme = () => {
   const currentThemeName = getCurrentThemeName();
-  const currentTheme = themeOptions.find((theme) => theme.name === currentThemeName);
+  const currentTheme = THEME_OPTIONS.find((theme) => theme.name === currentThemeName);
   return currentTheme?.value || defaultTheme;
 };
 
 export const getThemeByName = (themeName: string) => {
-  const theme = themeOptions.find((theme) => theme.name === themeName);
+  const theme = THEME_OPTIONS.find((theme) => theme.name === themeName);
   return theme?.value || defaultTheme;
 };
 
-export default themeOptions;
+export default THEME_OPTIONS;

@@ -59,6 +59,7 @@ type Colors = {
     secondary: string;
   };
 };
+type ThemeName = 'default' | 'night';
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -75,6 +76,7 @@ declare module '@mui/material/styles' {
       tertiary: string;
     };
     colors: Colors;
+    name: ThemeName;
   }
   interface ThemeOptions {
     zIndexes: typeof Z_INDEXES;
@@ -84,6 +86,7 @@ declare module '@mui/material/styles' {
       tertiary: string;
     };
     colors: Colors;
+    name: ThemeName;
   }
 }
 

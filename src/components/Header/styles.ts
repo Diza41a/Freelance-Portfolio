@@ -1,11 +1,13 @@
 import { styled } from '@mui/material';
-import { scaleFontSize } from '../../utils/styleUtils';
+import { responsive, scaleFontSize } from '../../utils/styleUtils';
+import { classNames as themeToggleClassNames } from '../ThemeToggle';
 
 export const classNames = {
   logoLink: 'LogoLink',
   navMenuExpanded: 'NavMenu--expanded',
   opaqueBackground: 'Header--opaqueBackground',
   hidden: 'Header--hidden',
+  navMenuContainer: 'NavMenuContainer',
 };
 
 export const HEADER_HEIGHT = 64;
@@ -21,10 +23,20 @@ const Header = styled('header')(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '0 5%',
-  backgroundColor: theme.colors.surface.secondary[300],
+  backgroundColor:
+    theme.name === 'default'
+      ? theme.colors.surface.secondary[300]
+      : theme.colors.surface.primary[100],
   height: HEADER_HEIGHT,
-  boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
-  transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
+  ...(theme.name === 'default'
+    ? {
+        boxShadow: 'rgb(25, 25, 25) 0px 0px 13px 0px',
+      }
+    : {
+        borderBottom: `1px solid ${theme.colors.border.primary}`,
+      }),
+  transition:
+    'background-color 0.2s ease-in-out, top 0.2s ease-in-out, border-color 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
     fontFamily: theme.fonts.tertiary,
@@ -32,6 +44,28 @@ const Header = styled('header')(({ theme }) => ({
     textDecoration: 'none',
     color: theme.colors.text.secondary[100],
     transition: 'color 0.2s ease-in-out',
+  },
+
+  [`.${classNames.navMenuContainer}`]: {
+    display: 'flex',
+    ...responsive({
+      default: {
+        columnGap: 8,
+      },
+      desktop: {
+        columnGap: 20,
+      },
+    }),
+
+    [`.${themeToggleClassNames.root}`]: {
+      svg: {
+        width: 28,
+        height: 28,
+        strokeWidth: 1.5,
+        color: theme.colors.text.secondary[100],
+        transition: 'color 0.2s ease-in-out',
+      },
+    },
   },
 
   nav: {
@@ -72,7 +106,10 @@ const Header = styled('header')(({ theme }) => ({
         height: 35,
         position: 'relative',
         left: 0,
-        backgroundColor: theme.colors.surface.secondary[300],
+        backgroundColor:
+          theme.name === 'default'
+            ? theme.colors.surface.secondary[300]
+            : theme.colors.surface.primary[100],
         transition: 'left 0.3s ease-in-out, background-color 0.2s ease-in-out',
         fontSize: 20,
         fontFamily: theme.fonts.secondary,
@@ -127,9 +164,16 @@ const Header = styled('header')(({ theme }) => ({
   [`&.${classNames.opaqueBackground}`]: {
     backgroundColor: 'transparent',
     boxShadow: 'none',
+    borderBottom: 'none',
 
     [`.${classNames.logoLink}`]: {
       color: theme.colors.text.primary[300],
+    },
+
+    [`.${classNames.navMenuContainer}`]: {
+      svg: {
+        color: theme.colors.text.primary[100],
+      },
     },
 
     '.hamburger-react': {

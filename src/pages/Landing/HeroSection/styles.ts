@@ -1,5 +1,6 @@
 import { styled } from '@mui/material';
 import { scaleFontSize } from '../../../utils/styleUtils';
+import { Z_INDEXES } from '../../../assets/themes/constants';
 
 export const classNames = {
   root: 'Landing-HeroSection',
@@ -42,7 +43,7 @@ const HeroSection = styled('div')(({ theme }) => ({
         columnGap: 16,
 
         button: {
-          width: 200,
+          minWidth: 150,
           fontSize: 13,
         },
       },
@@ -104,6 +105,7 @@ const HeroSection = styled('div')(({ theme }) => ({
 
         '>div': {
           position: 'absolute',
+          zIndex: Z_INDEXES.backgroundImages,
 
           img: {
             position: 'relative',
@@ -111,8 +113,8 @@ const HeroSection = styled('div')(({ theme }) => ({
             left: -40,
             width: 419,
             height: 265,
-            zIndex: 1,
             objectFit: 'cover',
+            ...(theme.name === 'night' && { filter: 'grayscale(0.15)' }),
           },
         },
       },

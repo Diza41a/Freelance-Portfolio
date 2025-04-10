@@ -13,6 +13,7 @@ const TopCornerBackgroundImageContainer = styled('div')(({ theme }) => ({
   top: 0,
   right: 0,
   zIndex: theme.zIndexes.backgroundImages,
+  ...(theme.name === 'night' && { filter: 'invert(1)' }),
 
   img: {
     position: 'relative',

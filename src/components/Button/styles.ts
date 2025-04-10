@@ -46,7 +46,7 @@ const Button = styled(MuiButton, {
     borderRadius,
     fontSize: scaleFontSize(fontSize, 'mobile'),
     padding: scalePadding(padding, 'mobile'),
-    transition: 'transform 0.3s ease-in-out',
+    transition: 'background-color 0.2s ease-in-out, transform 0.3s ease-in-out',
     ...(disabled && { cursor: 'not-allowed' }),
 
     '&:hover': {

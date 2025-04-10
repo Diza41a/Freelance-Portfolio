@@ -58,6 +58,17 @@ const ServicesSection = styled('div')(({ theme }) => ({
     },
   },
 
+  [theme.breakpoints.up('tablet')]: {
+    [`.${classNames.servicesContainer}`]: {
+      [`.${classNames.serviceCard}`]: {
+        ...(theme.name === 'night' && {
+          border: `medium ridge ${theme.colors.border.primary}`,
+          borderRadius: 6,
+        }),
+      },
+    },
+  },
+
   [theme.breakpoints.up('desktop')]: {
     marginTop: 120,
     padding: '0 5%',

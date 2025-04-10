@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import gsap from 'gsap';
@@ -12,6 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './components/MainLayout';
 import { ROUTES } from './routes';
 import injectFont, { FONTS_DATA } from './utils/fontInjector';
+import { KEYFRAMES } from './assets/themes/constants';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -58,6 +59,8 @@ const App = () => {
 
           <CssBaseline />
         </ThemeProvider>
+
+        <GlobalStyles styles={{ ...KEYFRAMES }} />
       </GlobalContext>
 
       <ReactQueryDevtools buttonPosition="bottom-right" />

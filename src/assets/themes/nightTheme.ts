@@ -1,11 +1,11 @@
 import { createTheme } from '@mui/material';
-import { BREAKPOINTS, COLORS, Z_INDEXES } from './constants';
+import { BREAKPOINTS, COLORS, KEYFRAMES_NAMES, Z_INDEXES } from './constants';
 import { FONTS_DATA } from '../../utils/fontInjector';
 import { scaleFontSize } from '../../utils/styleUtils';
 
 const typography = {
   body2: {
-    color: COLORS.blacks[400],
+    color: COLORS.lightWhites[400],
     fontFamily: FONTS_DATA.WorkSans.key,
     fontSize: scaleFontSize(18, 'mobile'),
 
@@ -14,7 +14,7 @@ const typography = {
     },
   },
   body3: {
-    color: COLORS.blacks[400],
+    color: COLORS.lightWhites[400],
     fontFamily: FONTS_DATA.WorkSans.key,
     fontSize: scaleFontSize(16, 'mobile'),
 
@@ -24,8 +24,8 @@ const typography = {
   },
 };
 
-const defaultTheme = createTheme({
-  name: 'default',
+const nightTheme = createTheme({
+  name: 'night',
   breakpoints: BREAKPOINTS,
   zIndexes: Z_INDEXES,
   fonts: {
@@ -35,14 +35,14 @@ const defaultTheme = createTheme({
   },
   colors: {
     text: {
-      primary: COLORS.blacks,
-      secondary: COLORS.whites,
+      primary: COLORS.lightBlues,
+      secondary: COLORS.lightWhites,
       error: '#D32F2F',
     },
     surface: {
-      primary: COLORS.whites,
-      secondary: COLORS.blacks,
-      attention: COLORS.purple,
+      primary: COLORS.blacks,
+      secondary: COLORS.lightBlacks,
+      attention: COLORS.crimson,
     },
     border: {
       primary: '#979797',
@@ -50,15 +50,15 @@ const defaultTheme = createTheme({
     },
     action: {
       primary: {
-        background: COLORS.lightGreen,
+        background: COLORS.cyan,
         text: COLORS.blacks[100],
       },
       secondary: {
-        background: COLORS.blacks[100],
+        background: COLORS.blacks[200],
         text: COLORS.whites[100],
       },
       link: {
-        background: COLORS.purple,
+        background: COLORS.crimson,
         text: COLORS.whites[100],
       },
       neutral: {
@@ -67,8 +67,8 @@ const defaultTheme = createTheme({
       },
     },
     decorative: {
-      primary: COLORS.purple,
-      secondary: COLORS.lightGreen,
+      primary: COLORS.crimson,
+      secondary: COLORS.cyan,
     },
   },
   typography,
@@ -76,11 +76,13 @@ const defaultTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          color: COLORS.blacks[100],
+          color: COLORS.whites[100],
           fontFamily: FONTS_DATA.SpaceGrotesk.key,
           fontSize: scaleFontSize(70, 0.6),
           fontWeight: 600,
           textTransform: 'uppercase',
+          textShadow: `0 0 8px ${COLORS.lightBlues[400]}`,
+          animation: `${KEYFRAMES_NAMES.nightThemeHeadingGlow} 2.5s ease-in-out infinite`,
 
           [`@media (min-width:${BREAKPOINTS.values.tablet}px)`]: {
             fontSize: scaleFontSize(70, 0.75),
@@ -91,49 +93,54 @@ const defaultTheme = createTheme({
           },
         },
         h2: {
-          color: COLORS.blacks[100],
+          color: COLORS.whites[100],
           fontFamily: FONTS_DATA.SpaceGrotesk.key,
           fontSize: scaleFontSize(48, 0.75),
           fontWeight: 600,
+          textShadow: `0 0 6px ${COLORS.lightBlues[300]}`,
+          animation: `${KEYFRAMES_NAMES.nightThemeHeadingGlow} 2.5s ease-in-out infinite`,
 
           [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
             fontSize: 48,
           },
         },
         h3: {
-          color: COLORS.blacks[100],
+          color: COLORS.whites[100],
           fontFamily: FONTS_DATA.SpaceGrotesk.key,
           fontSize: scaleFontSize(36, 'mobile'),
           fontWeight: 600,
           textTransform: 'uppercase',
+          textShadow: `0 0 5px ${COLORS.lightBlues[300]}`,
 
           [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
             fontSize: 36,
           },
         },
         h4: {
-          color: COLORS.blacks[100],
+          color: COLORS.whites[100],
           fontFamily: FONTS_DATA.SpaceGrotesk.key,
           fontSize: scaleFontSize(28, 'mobile'),
           fontWeight: 'bold',
+          textShadow: `0 0 4px ${COLORS.lightBlues[200]}`,
 
           [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
             fontSize: 28,
           },
         },
         h5: {
-          color: COLORS.blacks[100],
+          color: COLORS.whites[100],
           fontFamily: FONTS_DATA.SpaceGrotesk.key,
           fontSize: scaleFontSize(20, 'mobile'),
           fontWeight: 500,
           textTransform: 'uppercase',
+          textShadow: `0 0 3px ${COLORS.lightBlues[200]}`,
 
           [`@media (min-width:${BREAKPOINTS.values.desktop}px)`]: {
             fontSize: 20,
           },
         },
         body1: {
-          color: COLORS.blacks[400],
+          color: COLORS.lightWhites[300],
           fontFamily: FONTS_DATA.WorkSans.key,
           fontSize: scaleFontSize(20, 'mobile'),
 
@@ -143,10 +150,11 @@ const defaultTheme = createTheme({
         },
         body2: {
           ...typography.body2,
+          color: COLORS.lightWhites[400],
         },
       },
     },
   },
 });
 
-export default defaultTheme;
+export default nightTheme;

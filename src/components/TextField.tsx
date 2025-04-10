@@ -42,7 +42,7 @@ const StyledTextField = styled(MuiTextField, {
 
   '& .MuiOutlinedInput-root': {
     '& .MuiOutlinedInput-notchedOutline': {
-      ...(styleVariant === 'filled' && { border: 'none' }),
+      border: styleVariant === 'filled' ? 'none' : `1px solid ${theme.colors.border.primary}`,
     },
     '&:hover .MuiOutlinedInput-notchedOutline': {
       border: `1px solid ${theme.colors.decorative.primary}`,
