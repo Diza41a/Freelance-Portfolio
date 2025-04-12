@@ -8,7 +8,7 @@ import { Breadcrumbs, Divider, Typography, useTheme } from '@mui/material';
 import BreadcrumbLink from '../../components/BreadcrumbLink';
 import Button from '../../components/Button';
 import ProjectCard from '../../components/ProjectCard';
-import { generateProjectPageTweens } from './utils';
+import { generateProjectPageTweens, renderMedia } from './utils';
 import { useVisitedGSAP } from '../../hooks/useVisitedGSAP';
 
 const ProjectPage = () => {
@@ -200,19 +200,11 @@ const ProjectPage = () => {
           {MetaData}
           {Description}
         </div>
-        <img
-          className={classNames.media}
-          src={project.media.media1.source}
-          alt={project.media.media1.alt || ''}
-        />
+        {renderMedia(project.media.media1)}
         {ChallengeBlock}
         <Divider />
         {SolutionBlock}
-        <img
-          className={classNames.media}
-          src={project.media.media2.source}
-          alt={project.media.media2.alt || ''}
-        />
+        {renderMedia(project.media.media2)}
         {FeedbackBlock}
       </div>
       {NavButtons}

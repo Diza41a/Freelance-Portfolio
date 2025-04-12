@@ -1,8 +1,8 @@
 /**
  * @note Images should respect 16:9 aspect ratio.
  */
-type Media = {
-  type: 'imageUrl' | 'videoUrl';
+export type Media = {
+  type: 'imageUrl' | 'youtubeUrl';
   alt?: string;
   source: string;
 };
@@ -34,26 +34,35 @@ interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Web Portfolio for John Doe',
+    title: 'Design Portfolio for Nick Abramov',
     typeTitle: 'Personal portfolio website',
-    subtitle: 'A personal portfolio website showcasing my work and skills.',
-    description:
-      'This project involved creating a personal portfolio website for John Doe, a web developer. The website showcases his work, skills, and projects in a visually appealing manner.',
-    technologies: ['React', 'TypeScript', 'CSS', 'Styled Components'],
+    subtitle: 'A web portfolio and photo blog for a graphic designer.',
+    description: `A portfolio website requested by the visual designer client - Nick Abramov. The client requested several core
+      features, including Project(s), FAQs, and Contact pages, as well as an admin dashboard for the client to
+      manually perform create/update, as well as other CRUD operations, on projects and FAQs. The client provided a
+      complete Figma design spec.`,
+    technologies: [
+      'React',
+      'React Query',
+      'TypeScript',
+      'Nest.js',
+      'MongoDB',
+      'Styled Components',
+      'Figma',
+    ],
     keyFeatures: ['Responsive design', 'Interactive project showcase', 'Contact form integration'],
     servicesProvided: ['Web Development', 'UI/UX Design', 'SEO Optimization'],
     challenges: [
-      "Creating a visually appealing layout that reflects the client's personality.",
-      'Ensuring responsiveness across different devices and screen sizes.',
+      "Creating a responsive and dynamic web application that aligns with the client's design specification.",
+      'Implementing an admin dashboard to allow Nick to manage dynamic content (projects, FAQs, photo blog) easily.',
+      'Ensuring the website is SEO-optimized and performs well on all devices.',
     ],
     solutions: [
-      'Utilized modern web design principles and tools to create an engaging layout.',
-      'Implemented responsive design techniques using CSS media queries.',
+      "Utilizing React, Styled Components, and GSAP (scroll-triggered animations), delivered a responsive web application matching the client's Figma design closely.",
+      'Created a custom admin dashboard using React, Nest.js, and MongoDB, allowing Nick to manage his dynamic content easily.',
+      'Implemented SEO best practices, including meta tags and alt text for images (both static and dynamic), to improve search engine visibility.',
     ],
-    links: [
-      { label: 'Live Demo', path: '/projects/web-portfolio' },
-      { label: 'GitHub Repository', path: '/projects/web-portfolio/repo' },
-    ],
+    links: [{ label: 'View Site', path: 'https://nickabramov.com/' }],
     media: {
       cover: {
         type: 'imageUrl',
@@ -61,13 +70,11 @@ export const PROJECTS: Project[] = [
       },
       media1: {
         type: 'imageUrl',
-        source:
-          'https://www.blissmarcom.com/wp-content/uploads/2024/04/LANDING-PAGES-VS.-HOME-PAGES-2.jpg',
+        source: 'https://i.ibb.co/0px96jYm/Untitled-design.png',
       },
       media2: {
-        type: 'imageUrl',
-        source:
-          'https://www.blissmarcom.com/wp-content/uploads/2024/04/LANDING-PAGES-VS.-HOME-PAGES-2.jpg',
+        type: 'youtubeUrl',
+        source: 'https://www.youtube.com/embed/uJ6Sh85oLYc?si=57-Xusp78hutanBZ',
       },
     },
   },

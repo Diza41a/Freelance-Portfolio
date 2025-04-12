@@ -35,8 +35,7 @@ const Header = styled('header')(({ theme }) => ({
     : {
         outline: `1px solid ${alpha(theme.colors.border.primary, 0.4)}`,
       }),
-  transition:
-    'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
+  transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
     fontFamily: theme.fonts.tertiary,

@@ -15,6 +15,7 @@ export const classNames = {
   descriptionContainer: 'Project-DescriptionContainer',
   descriptionBody: 'Project-DescriptionBody',
   media: 'Project-Media',
+  iframeContainer: 'Project-IframeContainer',
   detailsBlock: 'Project-DetailsBlock',
   feedbackContainer: 'Project-FeedbackContainer',
   feedbackText: 'Project-FeedbackText',
@@ -447,6 +448,31 @@ const ProjectPage = styled('div')(({ theme }) => {
             textAlign: 'right',
           },
         },
+      },
+    },
+
+    [`.${classNames.iframeContainer}`]: {
+      position: 'relative',
+      width: '100%',
+      height: 0,
+      paddingBottom: '56.25%',
+      ...responsive({
+        default: {
+          margin: '24px 0',
+        },
+        desktop: {
+          margin: '60px 0',
+        },
+      }),
+
+      iframe: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        border: 'none',
+        borderRadius: 8,
       },
     },
   };

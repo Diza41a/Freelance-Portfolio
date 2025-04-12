@@ -7,6 +7,7 @@ import {
   generateSlideInTween,
   generateTitleTween,
 } from '../../utils/gsapUtils';
+import type { Media } from '../../data/projects';
 
 const generateMetaContainerTimeline = () => {
   const timeline = gsap.timeline({
@@ -67,7 +68,9 @@ const generateDescriptionContainerTimeline = () => {
 };
 
 const generateMediaTween = () => {
-  const mediaEls = document.querySelectorAll(`.${classNames.media}`);
+  const mediaEls = document.querySelectorAll(
+    `.${classNames.media}, .${classNames.iframeContainer}`,
+  );
 
   mediaEls.forEach((el) =>
     gsap.fromTo(
@@ -192,4 +195,20 @@ export const generateProjectPageTweens = () => {
   generateMediaTween();
   generateDetailsBlocksTimeline();
   generateNavButtonsTimeline();
+};
+
+export const renderMedia = (media: Media) => {
+  if (media.type === 'imageUrl') {
+    return <img className={classNames.media} src={media.source} alt={media.alt || ''} />;
+  } else if (media.type === 'youtubeUrl') {
+    const mutedVideoLink = `${media.source}?mute=1`;
+
+    return (
+      <div className={classNames.iframeContainer}>
+        <iframe src={mutedVideoLink} allowFullScreen title="Project Demo" />
+      </div>
+    );
+  }
+
+  return <></>;
 };
