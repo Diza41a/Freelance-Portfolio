@@ -7,7 +7,7 @@ export type Media = {
   source: string;
 };
 
-// WIP
+// TODO: WIP
 interface Project {
   title: string;
   typeTitle: string;
@@ -50,8 +50,12 @@ export const PROJECTS: Project[] = [
       'Styled Components',
       'Figma',
     ],
-    keyFeatures: ['Responsive design', 'Interactive project showcase', 'Contact form integration'],
-    servicesProvided: ['Web Development', 'UI/UX Design', 'SEO Optimization'],
+    keyFeatures: [
+      "Responsive and vibrant portfolio showcasing Nick's design projects, personal photography, and talent.",
+      'Dynamic content management via a custom admin dashboard.',
+      'SEO optimization for better search engine visibility.',
+    ],
+    servicesProvided: ['Full Stack Web Development', 'SEO Optimization'],
     challenges: [
       "Creating a responsive and dynamic web application that aligns with the client's design specification.",
       'Implementing an admin dashboard to allow Nick to manage dynamic content (projects, FAQs, photo blog) easily.',
@@ -79,18 +83,26 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    title: 'E-commerce Platform',
-    typeTitle: 'Shopify online store',
-    subtitle: 'An online store for selling products and services.',
-    description:
-      'This project involved developing a full-fledged e-commerce platform that allows users to browse, search, and purchase products online.',
-    technologies: ['Node.js', 'Express', 'MongoDB', 'React'],
+    title: 'OfKors European Bakery Website',
+    typeTitle: 'Dynamic bakery website',
+    subtitle: 'Business website for a local Ukrainian bakery.',
+    description: `
+      A business website for a local Ukrainian bakery. `,
+    technologies: [
+      'React',
+      'ReactI18',
+      'TypeScript',
+      'Nest.js',
+      'MongoDB',
+      'Styled Components',
+      'Figma',
+    ],
     keyFeatures: [
       'User authentication and authorization',
       'Product search and filtering',
       'Shopping cart functionality',
     ],
-    servicesProvided: ['Web Development', 'Database Design/Management', 'API Development'],
+    servicesProvided: ['Full Stack Web Development'],
     challenges: [
       'Implementing secure user authentication and authorization.',
       'Ensuring smooth performance with a large product database.',
@@ -99,69 +111,20 @@ export const PROJECTS: Project[] = [
       'Used JWT for secure user authentication and role-based access control.',
       'Optimized database queries and used caching techniques to improve performance.',
     ],
-    links: [{ label: 'Live Demo', path: '/projects/ecommerce-platform' }],
+    links: [{ label: 'View Site', path: 'https://www.ofkorseurobakery.com/' }],
     media: {
       cover: {
         type: 'imageUrl',
-        source:
-          'https://cdn.prod.website-files.com/5b5729421aca332c60585f78/63f5fa23da820b87c87958be_61ba503872080311dde1ea56_long-form-landing-page-examples.png',
+        source: 'https://i.ibb.co/CsMBxxFG/Screenshot-2025-04-12-at-10-29-53-PM.png',
       },
       media1: {
         type: 'imageUrl',
-        source:
-          'https://cdn.prod.website-files.com/5b5729421aca332c60585f78/63f5fa23da820b87c87958be_61ba503872080311dde1ea56_long-form-landing-page-examples.png',
+        source: 'https://i.ibb.co/KjJ2317t/Untitled-design.png',
       },
       media2: {
         type: 'imageUrl',
-        source:
-          'https://cdn.prod.website-files.com/5b5729421aca332c60585f78/63f5fa23da820b87c87958be_61ba503872080311dde1ea56_long-form-landing-page-examples.png',
+        source: 'https://i.ibb.co/B2Bxw3HD/Screenshot-2025-04-12-at-11-02-06-PM.png',
       },
-    },
-  },
-  {
-    title: 'Social Media App',
-    typeTitle: 'Comprehensive mobile application',
-    subtitle: 'A platform for connecting with friends and sharing content.',
-    description:
-      'Ultricies integer quis auctor elit sed vulputate mi sit. Aliquam sem et tortor consequat id porta nibh. Id cursus metus aliquam eleifend. Cursus sit amet dictum sit amet justo donec enim diam. Feugiat nisl pretium fusce id velit ut tortor. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Ultricies integer quis auctor elit sed vulputate mi sit. Aliquam sem et tortor consequat id porta nibh. Id cursus metus aliquam eleifend. Cursus sit amet dictum sit amet justo donec enim diam. Feugiat nisl pretium fusce id velit ut tortor. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Ultricies integer quis auctor elit sed vulputate mi sit. Aliquam sem et tortor consequat id porta nibh. Id cursus metus aliquam eleifend. Cursus sit amet dictum sit amet justo donec enim diam. Feugiat nisl pretium fusce id velit ut tortor. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. Ultricies integer quis auctor elit sed vulputate mi sit. Aliquam sem et tortor consequat id porta nibh. Id cursus metus aliquam eleifend.',
-    technologies: ['React Native', 'Firebase', 'GraphQL'],
-    keyFeatures: [
-      'User profiles and friend connections',
-      'Real-time chat functionality',
-      'Post sharing and commenting',
-    ],
-    servicesProvided: ['Mobile App Development', 'Backend Development', 'UI/UX Design'],
-    challenges: [
-      'Ensuring real-time communication between users.',
-      'Designing an intuitive user interface for mobile devices.',
-    ],
-    solutions: [
-      'Used Firebase for real-time database and authentication services.',
-      'Implemented a user-friendly UI using React Native components.',
-    ],
-    links: [{ label: 'Live Demo', path: '/projects/social-media-app' }],
-    media: {
-      cover: {
-        type: 'imageUrl',
-        source:
-          'https://images.unsplash.com/photo-1699891730676-037bed3c1bed?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D',
-      },
-      media1: {
-        type: 'imageUrl',
-        source:
-          'https://images.unsplash.com/photo-1699891730676-037bed3c1bed?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D',
-      },
-      media2: {
-        type: 'imageUrl',
-        source:
-          'https://images.unsplash.com/photo-1699891730676-037bed3c1bed?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D',
-      },
-    },
-    feedback: {
-      name: 'Jane Smith',
-      position: 'Product Manager',
-      review:
-        'The social media app has transformed the way we connect with our audience. The user experience is seamless and engaging.',
     },
   },
 ];

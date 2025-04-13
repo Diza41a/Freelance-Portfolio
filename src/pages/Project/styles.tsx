@@ -40,8 +40,6 @@ const ProjectPage = styled('div')(({ theme }) => {
           default: {
             display: 'block',
             width: '100%',
-            borderTop: `solid 1px ${theme.colors.border.primary}`,
-            borderBottom: `solid 1px ${theme.colors.border.primary}`,
           },
           desktop: {
             maxHeight: `calc(100vh - ${HEADER_HEIGHT_DESKTOP}px - 1px)`,
