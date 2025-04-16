@@ -36,11 +36,11 @@ export const PROJECTS: Project[] = [
   {
     title: 'Design Portfolio for Nick Abramov',
     typeTitle: 'Personal portfolio website',
-    subtitle: 'A web portfolio and photo blog for a graphic designer.',
-    description: `A portfolio website requested by the visual designer client - Nick Abramov. The client requested several core
-      features, including Project(s), FAQs, and Contact pages, as well as an admin dashboard for the client to
-      manually perform create/update, as well as other CRUD operations, on projects and FAQs. The client provided a
-      complete Figma design spec.`,
+    subtitle: 'A web portfolio and a photo blog for a graphic designer.',
+    description: `A portfolio website requested by a visual designer client - Nick Abramov. The client requested several core
+      features, including Project(s) Photo Blog, FAQs, and Contact pages, as well as an admin dashboard to
+      manually and intuitively manage their content on the application. The client provided a
+      Figma design spec.`,
     technologies: [
       'React',
       'React Query',
@@ -84,10 +84,13 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'OfKors European Bakery Website',
-    typeTitle: 'Dynamic bakery website',
+    typeTitle: 'Bakery business website',
     subtitle: 'Business website for a local Ukrainian bakery.',
     description: `
-      A business website for a local Ukrainian bakery. `,
+      A business website for a local Ukrainian bakery. Inna needed several core pages, including Menu, Gallery, About us, and others, to showcase her produce,
+      services, and overview of the bakery itself. As a Ukrainian business owner, Inna wanted to ensure that the website was accessible to her Slavic clients as well,
+      so I've implemented a Ukrainian and Russian language support using ReactI18n library. The dynamic content such as menu items and hours of operation have been
+      exposed through a private API, allowing Inna to update the information easily, should the need arise.`,
     technologies: [
       'React',
       'ReactI18',
@@ -98,18 +101,21 @@ export const PROJECTS: Project[] = [
       'Figma',
     ],
     keyFeatures: [
-      'User authentication and authorization',
-      'Product search and filtering',
-      'Shopping cart functionality',
+      "Responsive and vibrant website showcasing the bakery's products, services, and overview.",
+      'Multi-lingual support for Ukrainian and Russian-speaking clients.',
+      'Dynamic content management via a custom API.',
     ],
     servicesProvided: ['Full Stack Web Development'],
     challenges: [
-      'Implementing secure user authentication and authorization.',
-      'Ensuring smooth performance with a large product database.',
+      'Handpicking and implementing responsive web design that aligns with the bakery’s brand and aesthetic.',
+      'Researching the core features needed for bakery business overview and promotion.',
+      'Integrating a multi-lingual support for Ukrainian and Russian-speaking clients.',
+      'Creating a custom API and database to manage dynamic content on the website.',
     ],
     solutions: [
-      'Used JWT for secure user authentication and role-based access control.',
-      'Optimized database queries and used caching techniques to improve performance.',
+      'Utilizing React, Styled Components, and GSAP (scroll-triggered animations), delivered a responsive web application matching the bakery’s brand and aesthetic.',
+      'Implemented a custom API using Nest.js and MongoDB to manage dynamic content such as menu items and hours of operation.',
+      'Integrated ReactI18n library for multi-lingual support, allowing the website to be accessible to both Ukrainian and Russian-speaking clients.',
     ],
     links: [{ label: 'View Site', path: 'https://www.ofkorseurobakery.com/' }],
     media: {
