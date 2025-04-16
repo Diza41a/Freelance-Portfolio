@@ -75,15 +75,15 @@ const ContactForm = (props: ContactFormProps) => {
           }}
           render={({ field }) => (
             <div className={mergeNameFieldClassNames(classNames.nameField)}>
-              <InputLabel htmlFor={field.name} required>
-                Name
-              </InputLabel>
+              <InputLabel required>Name</InputLabel>
               <TextField
                 {...field}
                 placeholder="Enter your name/company"
                 error={!!errors.name}
                 helperText={errors.name ? errors.name.message : ''}
                 styleVariant={styleVariant}
+                name={field.name}
+                id={field.name}
               />
             </div>
           )}
@@ -101,15 +101,15 @@ const ContactForm = (props: ContactFormProps) => {
           }}
           render={({ field }) => (
             <div className={mergeNameFieldClassNames(classNames.emailField)}>
-              <InputLabel htmlFor={field.name} required>
-                Email
-              </InputLabel>
+              <InputLabel required>Email</InputLabel>
               <TextField
                 {...field}
                 placeholder="Email"
                 error={!!errors.email}
                 helperText={errors.email ? errors.email.message : ''}
                 styleVariant={styleVariant}
+                name={field.name}
+                id={field.name}
               />
             </div>
           )}
@@ -126,13 +126,15 @@ const ContactForm = (props: ContactFormProps) => {
           }}
           render={({ field }) => (
             <div className={mergeNameFieldClassNames(classNames.phoneNumberField)}>
-              <InputLabel htmlFor={field.name}>Phone Number</InputLabel>
+              <InputLabel>Phone Number</InputLabel>
               <TextField
                 {...field}
                 placeholder="Phone Number"
                 error={!!errors.phone}
                 helperText={errors.phone ? errors.phone.message : ''}
                 styleVariant={styleVariant}
+                name={field.name}
+                id={field.name}
               />
             </div>
           )}
@@ -158,6 +160,8 @@ const ContactForm = (props: ContactFormProps) => {
                 error={!!errors.message}
                 helperText={errors.message ? errors.message.message : ''}
                 styleVariant={styleVariant}
+                name={field.name}
+                id={field.name}
               />
             </div>
           )}
