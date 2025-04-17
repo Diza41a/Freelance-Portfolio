@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     subtitle: 'A web portfolio and a photo blog for a graphic designer.',
     description: `A portfolio website requested by a visual designer client - Nick Abramov. The client requested several core
       features, including Projects, Photo Blog, FAQs, and Contact pages, as well as an admin dashboard to
-      manually and intuitively manage their content. The client provided a Figma design spec.`,
+      manually and intuitively manage his content. The client provided a Figma design spec.`,
     technologies: [
       'React',
       'React Query',
