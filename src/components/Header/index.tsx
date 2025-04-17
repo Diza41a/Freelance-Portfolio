@@ -53,7 +53,10 @@ const Header = () => {
       const currentScrollY = window.scrollY;
       const isScrollingUp = currentScrollY < lastScrollY;
 
-      if (isScrollingUp || currentScrollY <= visibleHeaderY) {
+      const footerEl = document.querySelector('footer');
+      const isFooterVisible = footerEl && footerEl.getBoundingClientRect().top < window.innerHeight;
+
+      if ((isScrollingUp || currentScrollY <= visibleHeaderY) && !isFooterVisible) {
         headerRef.current?.classList.remove(classNames.hidden);
       } else {
         if (!isBurgerExpanded) headerRef.current?.classList.add(classNames.hidden);

@@ -146,7 +146,7 @@ const DevProcessSection = styled('div')(({ theme }) => ({
                 height: 175,
               },
             }),
-            objectFit: 'contain',
+            objectFit: 'fill',
           },
         },
       },

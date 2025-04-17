@@ -41,7 +41,7 @@ const DevProcessSection = () => {
   return (
     <S.DevProcessSection className={classNames.root}>
       <Typography variant="h2" className={classNames.title}>
-        My Development Process
+        Delivery Process
       </Typography>
       <div className={classNames.cardsContainer}>
         {DEV_PROCESS_STEPS.map((step, i) => (

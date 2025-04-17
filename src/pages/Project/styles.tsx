@@ -416,7 +416,7 @@ const ProjectPage = styled('div')(({ theme }) => {
           }),
 
           [`.${projectCardClassNames.coverImage}`]: {
-            objectFit: 'cover',
+            objectFit: 'fit',
 
             ...responsive({
               default: {

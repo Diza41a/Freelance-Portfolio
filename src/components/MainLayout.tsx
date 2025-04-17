@@ -5,6 +5,7 @@ import Header from './Header';
 import { HEADER_HEIGHT, HEADER_HEIGHT_DESKTOP } from './Header/styles';
 import TopCornerBackgroundImage from './TopCornerBackgroundImage';
 import { Z_INDEXES } from '../assets/themes/constants';
+import Footer from './Footer';
 
 const OutletWrapper = styled('div')(({ theme }) => ({
   minHeight: '100vh',
@@ -36,6 +37,7 @@ const MainLayout = (): JSX.Element => {
         <Outlet />
         <TopCornerBackgroundImage />
       </OutletWrapper>
+      <Footer />
     </>
   );
 };

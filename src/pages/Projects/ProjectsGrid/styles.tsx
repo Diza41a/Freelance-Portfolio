@@ -38,7 +38,7 @@ const ProjectsGridContainer = styled('div')(() => {
       }),
 
       [`.${projectCardClassNames.coverImage}`]: {
-        objectFit: 'cover',
+        objectFit: 'fill',
         ...responsive({
           largeDesktop: {
             height: desktopCoverImageHeight,
