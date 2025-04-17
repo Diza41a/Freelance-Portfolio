@@ -7,7 +7,6 @@ export type Media = {
   source: string;
 };
 
-// TODO: WIP
 interface Project {
   title: string;
   typeTitle: string;
