@@ -12,7 +12,7 @@ export const classNames = {
 
 export const HEADER_HEIGHT = 64;
 export const HEADER_HEIGHT_DESKTOP = 80;
-const logoLinkFontSize = 26;
+const logoLinkFontSize = 36;
 const navLinkFontSize = 16;
 const Header = styled('header')(({ theme }) => ({
   width: '100%',
@@ -38,7 +38,7 @@ const Header = styled('header')(({ theme }) => ({
   transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
-    fontFamily: 'monospace',
+    fontFamily: theme.fonts.tertiary,
     fontSize: scaleFontSize(logoLinkFontSize, 'mobile'),
     textDecoration: 'none',
     color: theme.colors.text.secondary[100],
