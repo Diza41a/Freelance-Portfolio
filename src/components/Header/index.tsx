@@ -42,7 +42,8 @@ const Header = () => {
   );
   const LogoLink = (
     <NavLink to="/" className={classNames.logoLink}>
-      WIP
+      <span>D</span>i<span>Z</span>zy.dev
+      {/* DZak.dev */}
     </NavLink>
   );
 

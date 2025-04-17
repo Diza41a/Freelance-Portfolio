@@ -37,20 +37,18 @@ const RunningLineContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-// TODO: Emphasize the skills that are marketable
 const SKILLS = [
-  'FullStack Web Development',
-  'HTML/CSS',
-  'TypeScript/JavaScript',
-  'React.js',
-  'Styled Components',
-  'Responsive Layouts',
-  'Node.js/Express.js',
+  'Full-Stack Web Development',
+  'TypeScript & JavaScript',
+  'React.js (Hooks, Router, Context)',
+  'Responsive Styled Components',
+  'Node.js & Express.js',
   'Nest.js',
-  'MongoDB/Mongoose',
-  'Frontend Development',
-  'Backend Development',
-  'API Development/Integration',
+  'MongoDB & Mongoose',
+  'REST API Development',
+  'Third-Party API Integration',
+  'Frontend Architecture',
+  'Backend Logic & Data Modeling',
 ];
 
 const RunningLine = () => {

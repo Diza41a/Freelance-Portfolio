@@ -6,7 +6,7 @@ import { useVisitedGSAP } from '../../hooks/useVisitedGSAP';
 
 const ProjectsPage = () => {
   const titleBoxDescription =
-    'Each case study demonstrates our commitment to creating innovative, user-centric solutions that drive results for our clients.';
+    'These examples demonstrate how I approach web development with a focus on your goals, usability, and results.';
   const titleBoxBreadcrumbLinks = [
     { label: 'Home', path: '/' },
     { label: 'Projects', path: '/projects' },

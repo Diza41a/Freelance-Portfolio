@@ -1,4 +1,4 @@
-import { alpha, styled } from '@mui/material';
+import { alpha, darken, styled } from '@mui/material';
 import { responsive, scaleFontSize } from '../../utils/styleUtils';
 import { classNames as themeToggleClassNames } from '../ThemeToggle';
 
@@ -12,7 +12,7 @@ export const classNames = {
 
 export const HEADER_HEIGHT = 64;
 export const HEADER_HEIGHT_DESKTOP = 80;
-const logoLinkFontSize = 35;
+const logoLinkFontSize = 26;
 const navLinkFontSize = 16;
 const Header = styled('header')(({ theme }) => ({
   width: '100%',
@@ -38,11 +38,21 @@ const Header = styled('header')(({ theme }) => ({
   transition: 'background-color 0.2s ease-in-out, top 0.2s ease-in-out',
 
   [`.${classNames.logoLink}`]: {
-    fontFamily: theme.fonts.tertiary,
+    fontFamily: 'monospace',
     fontSize: scaleFontSize(logoLinkFontSize, 'mobile'),
     textDecoration: 'none',
     color: theme.colors.text.secondary[100],
     transition: 'color 0.2s ease-in-out',
+
+    span: {
+      '&:nth-of-type(2n - 1)': {
+        color: darken(theme.colors.decorative.secondary, 0.2),
+      },
+
+      '&:nth-of-type(2n)': {
+        color: theme.colors.decorative.primary,
+      },
+    },
   },
 
   [`.${classNames.navMenuContainer}`]: {

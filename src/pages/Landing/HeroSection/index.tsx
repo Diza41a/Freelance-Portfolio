@@ -20,8 +20,8 @@ const HeroSection = () => {
       <div className={classNames.titleContainer}>
         <Typography variant="h1" component="h1">
           Transforming ideas into
-          <br /> exceptional digital
-          <br /> products
+          <br /> friendly and dynamic
+          <br /> web solutions
         </Typography>
       </div>
       <div className={classNames.bodyContainer}>
@@ -33,8 +33,8 @@ const HeroSection = () => {
         </div>
         <div className={classNames.bodyContainerContent}>
           <Typography className={classNames.bodyContainerText}>
-            Creating innovative, user-centric designs that drive business success and deliver
-            outstanding user experiences across all digital platforms.
+            I develop full-stack web solutions that are fast, responsive, and easy to manage — built
+            to support your business.
           </Typography>
           <div className={classNames.bodyContainerActionButtons}>
             <NavLink to="/projects">
@@ -55,9 +55,6 @@ const HeroSection = () => {
               showLinkIcon
             >
               LinkedIn
-            </Link>
-            <Link href="https://github.com/diza41a" target="_blank" showLinkIcon>
-              GitHub
             </Link>
             <Link href={ResumePdf} target="_blank">
               View Resume

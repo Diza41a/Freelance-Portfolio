@@ -37,9 +37,8 @@ export const PROJECTS: Project[] = [
     typeTitle: 'Personal portfolio website',
     subtitle: 'A web portfolio and a photo blog for a graphic designer.',
     description: `A portfolio website requested by a visual designer client - Nick Abramov. The client requested several core
-      features, including Project(s) Photo Blog, FAQs, and Contact pages, as well as an admin dashboard to
-      manually and intuitively manage their content on the application. The client provided a
-      Figma design spec.`,
+      features, including Projects, Photo Blog, FAQs, and Contact pages, as well as an admin dashboard to
+      manually and intuitively manage their content. The client provided a Figma design spec.`,
     technologies: [
       'React',
       'React Query',
@@ -79,6 +78,11 @@ export const PROJECTS: Project[] = [
         type: 'youtubeUrl',
         source: 'https://www.youtube.com/embed/uJ6Sh85oLYc?si=57-Xusp78hutanBZ',
       },
+    },
+    feedback: {
+      name: 'Nick Abramov',
+      position: 'Graphic Designer',
+      review: `David did an amazing job bringing my portfolio website to life. He took my Figma designs and transformed them into a sleek, fully functional site that includes everything I needed: a home page showcasing all my projects, a photo blog, an FAQ page, and a user-friendly custom admin dashboard. I’m absolutely thrilled with the final result and the positive reactions I receive from people when I show them the site.`,
     },
   },
   {

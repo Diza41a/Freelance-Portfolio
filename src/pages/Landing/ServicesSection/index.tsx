@@ -12,23 +12,25 @@ import { useVisitedGSAP } from '../../../hooks/useVisitedGSAP';
 const SERVICES = [
   {
     title: 'Full Stack Web Development',
-    description: 'I build responsive and user-friendly web applications using modern technologies.',
+    description:
+      'I build responsive, user-friendly websites and web apps using modern tools like React and Nest.js.',
     icon: <ComputerIcon />,
   },
   {
     title: 'SEO Optimization',
-    description: 'I optimize websites for search engines to improve visibility and ranking.',
+    description:
+      "I improve your platform's visibility on search engines to help more people find your website online.",
     icon: <SEOIcon />,
   },
   {
     title: 'Web Application Maintenance',
     description:
-      'I provide ongoing support and maintenance for web applications to ensure optimal performance.',
+      'I provide support and maintenance for web applications to keep your website running smoothly.',
     icon: <MaintenanceIcon />,
   },
   {
     title: 'More Coming Soon...',
-    description: 'Stay tuned for more exciting services in the future!',
+    description: "Stay tuned — more services to support your platform's growth are on the way!",
     icon: <MoreComingSoonIcon />,
   },
 ];

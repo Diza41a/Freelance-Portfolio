@@ -113,7 +113,7 @@ const HeroSection = styled('div')(({ theme }) => ({
             left: -40,
             width: 419,
             height: 265,
-            objectFit: 'cover',
+            objectFit: 'contain',
             ...(theme.name === 'night' && { filter: 'grayscale(0.15)' }),
           },
         },
