@@ -32,7 +32,7 @@ const ProjectPage = styled('div')(({ theme }) => {
   const desktopCoverImageHeight = `calc(40vw * 0.5625 - 9px)`;
 
   return {
-    overflowY: 'hidden',
+    overflow: 'hidden',
 
     [`.${classNames.titleBox}`]: {
       position: 'relative',
